@@ -445,6 +445,46 @@ function setupContactModal() {
   });
 }
 
+function setupMobileDrawer() {
+  const drawer = document.getElementById("mobile-menu-drawer");
+  const toggleBtn = document.getElementById("mobile-menu-toggle");
+  const closeBtn = document.getElementById("mobile-menu-close");
+  const backdrop = document.getElementById("mobile-drawer-backdrop");
+  const drawerLinks = document.querySelectorAll("[data-drawer-link]");
+
+  if (!drawer || !toggleBtn || !closeBtn) return;
+
+  const openDrawer = () => {
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    toggleBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeDrawer = () => {
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  toggleBtn.addEventListener("click", openDrawer);
+  closeBtn.addEventListener("click", closeDrawer);
+  if (backdrop) backdrop.addEventListener("click", closeDrawer);
+
+  drawerLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeDrawer();
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drawer.classList.contains("open")) {
+      closeDrawer();
+    }
+  });
+}
+
 /* --------------------------------------------------------------------------
    6. Application Initialization
    -------------------------------------------------------------------------- */
@@ -465,6 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Setup Interactive Features
   setupCopyButtons();
   setupContactModal();
+  setupMobileDrawer();
   startLiveClock();
 
   // 4. Initial Render

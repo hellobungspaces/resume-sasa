@@ -46,14 +46,88 @@
           <span id="theme-icon">☀️</span>
         </button>
 
-        <!-- Quick Contact CTA -->
-        <button id="open-contact-modal-btn" class="btn btn-primary btn-sm open-contact-trigger" type="button">
+        <!-- Quick Contact CTA (Desktop) -->
+        <button id="open-contact-modal-btn" class="btn btn-primary btn-sm open-contact-trigger desktop-only-btn" type="button">
           <span data-i18n="btnBookCall">Hubungi</span>
           <span class="arrow-glyph">↗</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-toggle" class="btn btn-icon mobile-menu-toggle" type="button" aria-label="Buka Menu Navigasi" aria-expanded="false">
+          <svg class="hamburger-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- =========================================================================
+       Mobile Navigation Drawer
+       ========================================================================= -->
+  <div id="mobile-menu-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-header">
+        <div class="brand">
+          <span class="brand-monogram">SZ</span>
+          <span class="brand-name">Saida Zakiyah</span>
+        </div>
+        <button id="mobile-menu-close" class="btn btn-icon" type="button" aria-label="Tutup Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-menu" aria-label="Mobile Navigation">
+        <a href="#hero" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">00</span>
+          <span class="nav-title">Beranda / Profil</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#works" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">01</span>
+          <span class="nav-title" data-i18n="navWorks">Karya &amp; Kasus</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#experience" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">02</span>
+          <span class="nav-title" data-i18n="navExperience">Pengalaman Kerja</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#education" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">03</span>
+          <span class="nav-title" data-i18n="navEducation">Pendidikan</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#skills" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">04</span>
+          <span class="nav-title" data-i18n="navSkills">Keahlian &amp; Domain</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">05</span>
+          <span class="nav-title" data-i18n="navContact">Kontak Langsung</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+      </nav>
+
+      <div class="mobile-drawer-footer">
+        <div class="drawer-status-badge">
+          <span class="pulse-dot"></span>
+          <span>TERSEDIA UNTUK KERJA</span>
+        </div>
+        <a href="https://wa.me/6289601255561?text=Halo%20Saida%20Zakiyah,%20saya%20melihat%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="width: 100%;">
+          <span>Chat WhatsApp (+62 896-0125-5561)</span>
+          <span class="arrow-glyph">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================================
        Hero Section (Asymmetric Editorial Style)
