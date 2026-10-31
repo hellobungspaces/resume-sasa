@@ -214,6 +214,10 @@
 
             <div class="photo-container">
               <img src="assets/saida-profile.jpg" alt="Foto Resmi Saida Zakiyah" class="editorial-photo" width="380" height="380">
+              <div class="photo-verified-pill">
+                <span class="caption-dot"></span>
+                <span>Verified Dossier</span>
+              </div>
             </div>
 
             <div class="photo-caption-tag">
@@ -287,8 +291,8 @@
         </div>
       </div>
 
-      <div class="experience-list" id="experience-container">
-        <!-- Rendered dynamically from data.js -->
+      <div class="experience-ledger" id="experience-container">
+        <!-- Rendered dynamically as Editorial Ledger -->
       </div>
     </div>
   </section>
@@ -323,6 +327,14 @@
           <h2 class="section-heading" data-i18n="skillsHeading">KEAHLIAN &amp; DOMAIN</h2>
           <p class="section-subheading" data-i18n="skillsSubheading">Alat operasional marketplace, administrasi data, dan kompetensi kerja.</p>
         </div>
+      </div>
+
+      <!-- Interactive Segmented Filter Nav -->
+      <div class="skills-filter-nav" id="skills-filter-nav" role="tablist" aria-label="Filter Kategori Keahlian">
+        <button type="button" class="skill-tab-pill active" data-filter="all">Semua Keahlian</button>
+        <button type="button" class="skill-tab-pill" data-filter="hard-skills">Tools &amp; Marketplace</button>
+        <button type="button" class="skill-tab-pill" data-filter="soft-skills">Karakter &amp; Etos</button>
+        <button type="button" class="skill-tab-pill" data-filter="operational-domains">Domain Operasional</button>
       </div>
 
       <div class="skills-grid" id="skills-container">

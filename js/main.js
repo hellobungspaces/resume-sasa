@@ -172,20 +172,27 @@ function renderCaseStudies(lang) {
   const container = document.getElementById("case-studies-container");
   if (!container) return;
 
+  const highlights = [
+    { id: "4.9★ Toko Terjaga", en: "4.9★ Store Rating" },
+    { id: "Data Tanggap Bencana", en: "Crisis Data Audit" },
+    { id: "0% Selisih Stok FIFO", en: "Zero Shrinkage FIFO" }
+  ];
+
   const html = portfolioData.caseStudies
     .map((cs, idx) => {
       const num = String(idx + 1).padStart(2, "0");
+      const badgeText = highlights[idx] ? highlights[idx][lang] : "VERIFIED CASE";
       return `
       <article class="work-card">
         <div class="work-header">
           <div>
             <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem;">
-              CASE ${num}
+              CASE ${num} &bull; OPERATIONAL DEEP-DIVE
             </div>
             <h3 class="work-card-title">${cs.title[lang]}</h3>
           </div>
           <div class="work-tags">
-            <span class="tag-badge">OPERATIONS</span>
+            <span class="case-metric-badge">${badgeText}</span>
           </div>
         </div>
 
@@ -224,35 +231,59 @@ function renderExperience(lang) {
   const html = portfolioData.experiences
     .map((exp, idx) => {
       const num = String(idx + 1).padStart(2, "0");
+      const isFirst = idx === 0 ? "open" : "";
       return `
-      <div class="exp-card">
-        <div class="exp-header">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-bottom: 0.25rem;">
-              ROLE ${num}
+      <div class="ledger-item ${isFirst}" data-ledger-item>
+        <button type="button" class="ledger-header-btn" data-ledger-toggle aria-expanded="${idx === 0}">
+          <div class="ledger-col-left">
+            <span class="ledger-index">[ ${num} ]</span>
+            <div class="ledger-title-wrap">
+              <h3 class="ledger-role-title">${exp.role[lang]}</h3>
+              <div class="ledger-company-info">
+                <span>${exp.company}</span>
+                <span>&bull;</span>
+                <span>${exp.location}</span>
+                <span class="tag-badge" style="margin-left: 0.35rem;">${exp.type[lang]}</span>
+              </div>
             </div>
-            <h3 class="exp-role-title">${exp.role[lang]}</h3>
-            <div class="exp-company">${exp.company} &bull; ${exp.location}</div>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <span class="tag-badge">${exp.type[lang]}</span>
-            <span class="exp-period-badge">${exp.period[lang]}</span>
+
+          <div class="ledger-col-right">
+            <span class="ledger-period">${exp.period[lang]}</span>
+            <span class="ledger-expand-indicator" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </div>
+        </button>
+
+        <div class="ledger-body-drawer">
+          <div class="ledger-drawer-inner">
+            <div class="ledger-tags-row">
+              ${exp.tags.map((t) => `<span class="tag-badge">${t}</span>`).join("")}
+            </div>
+            <ul class="exp-bullets">
+              ${exp.bullets[lang].map((b) => `<li>${b}</li>`).join("")}
+            </ul>
           </div>
         </div>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0;">
-          ${exp.tags.map((t) => `<span class="tag-badge">${t}</span>`).join("")}
-        </div>
-
-        <ul class="exp-bullets">
-          ${exp.bullets[lang].map((b) => `<li>${b}</li>`).join("")}
-        </ul>
       </div>
     `;
     })
     .join("");
 
   container.innerHTML = html;
+
+  container.querySelectorAll("[data-ledger-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const parent = btn.closest("[data-ledger-item]");
+      if (!parent) return;
+      const isOpen = parent.classList.contains("open");
+      parent.classList.toggle("open", !isOpen);
+      btn.setAttribute("aria-expanded", !isOpen);
+    });
+  });
 }
 
 function renderEducation(lang) {
@@ -340,7 +371,7 @@ function renderSkills(lang) {
       }
 
       return `
-      <div class="skill-category-card">
+      <div class="skill-category-card" data-category="${cat.id}">
         <h3 class="skill-cat-title">${cat.title[lang]}</h3>
         <div>${itemsHtml}</div>
       </div>
@@ -349,6 +380,34 @@ function renderSkills(lang) {
     .join("");
 
   container.innerHTML = html;
+}
+
+function setupSkillsFilter() {
+  const filterNav = document.getElementById("skills-filter-nav");
+  if (!filterNav) return;
+
+  const buttons = filterNav.querySelectorAll(".skill-tab-pill");
+  const container = document.getElementById("skills-container");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      if (!container) return;
+      const cards = container.querySelectorAll(".skill-category-card");
+      cards.forEach((card) => {
+        const cat = card.getAttribute("data-category");
+        if (filter === "all" || cat === filter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -529,6 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupContactModal();
   setupMobileDrawer();
   setupBackToTop();
+  setupSkillsFilter();
 
   // 4. Initial Render
   setLanguage(currentLang);
