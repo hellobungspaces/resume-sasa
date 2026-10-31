@@ -1,0 +1,9 @@
+{
+  "name": "resume-saida-zakiyah",
+  "version": "1.0.0",
+  "description": "Portfolio and resume for Saida Zakiyah",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

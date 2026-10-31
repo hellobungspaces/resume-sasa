@@ -1,0 +1,1588 @@
+/* ==========================================================================
+   Saida Zakiyah Portfolio & CV — Editorial Studio Aesthetic
+   Inspired by: Elizabeth Olsen, Michael Designer, Alex Jordan & Masum Portfolio
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Default: Dark Editorial Studio Theme (Elizabeth Olsen / Alex Jordan style) */
+  --bg-body: #0A0A0A;
+  --bg-surface: #121212;
+  --bg-subtle: #1A1A1A;
+  --bg-card: #141414;
+  --bg-overlay: rgba(0, 0, 0, 0.82);
+
+  --text-main: #FFFFFF;
+  --text-secondary: #B5B5B5;
+  --text-muted: #737373;
+  --text-inverse: #0A0A0A;
+
+  --border: #242424;
+  --border-light: #333333;
+  --border-focus: #FF5A26;
+
+  /* Primary Editorial Accent: Vibrant Architectural Rust / Orange */
+  --primary: #FF5A26;
+  --primary-hover: #E04818;
+  --primary-subtle: #2A140C;
+  --primary-border: #4D2012;
+
+  /* Secondary Accents */
+  --accent-teal: #14B8A6;
+  --accent-green: #10B981;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.85);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+[data-theme="warm"] {
+  /* Light Editorial Gallery Paper Theme (Michael Designer style) */
+  --bg-body: #F7F5F0;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #EEEBE3;
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(20, 20, 20, 0.6);
+
+  --text-main: #0F0F0F;
+  --text-secondary: #4A4A4A;
+  --text-muted: #7D7A75;
+  --text-inverse: #FFFFFF;
+
+  --border: #E0DDD5;
+  --border-light: #D0CCC2;
+  --border-focus: #D9480F;
+
+  --primary: #D9480F;
+  --primary-hover: #BF360C;
+  --primary-subtle: #FBECE4;
+  --primary-border: #F7C6B3;
+
+  --accent-teal: #0F766E;
+  --accent-green: #059669;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 3px;
+}
+
+/* Micro-interaction tap compression */
+.btn:active,
+.contact-pill:active,
+.mobile-bar-btn:active,
+.giant-email-btn:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout Container
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Floating Island Navbar
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+[data-theme="warm"] .site-header {
+  background-color: rgba(247, 245, 240, 0.9);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.25rem;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-monogram {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons & Pills System
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-light);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--text-main);
+}
+
+.btn-icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  border-color: var(--primary);
+}
+
+.arrow-glyph {
+  font-family: var(--font-mono);
+  font-size: 1.05em;
+  transition: transform 0.15s ease;
+}
+
+.btn:hover .arrow-glyph {
+  transform: translate(2px, -2px);
+}
+
+/* Language Switcher Pill */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-subtle);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.lang-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Identity Section (Editorial Asymmetric Layout)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 3.5rem 0 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0 2.5rem 0;
+  }
+}
+
+/* Micro Metadata Ticker */
+.hero-micro-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.micro-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* Giant Display Title & Rotating Stamp */
+.hero-headline-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0 1.75rem 0;
+  position: relative;
+}
+
+.hero-huge-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8.5vw, 6.8rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+}
+
+.title-accent {
+  color: var(--primary);
+}
+
+/* Rotating Stamp Badge (Michael Designer inspiration) */
+.hero-stamp-badge {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stamp-svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateStamp 22s linear infinite;
+  fill: var(--text-muted);
+}
+
+@keyframes rotateStamp {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.stamp-center {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .hero-stamp-badge {
+    display: none;
+  }
+}
+
+/* 2-Column Hero Body */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.hero-role-label {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .hero-role-label {
+    font-size: 1.1rem;
+  }
+}
+
+.hero-manifesto {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+@media (max-width: 640px) {
+  .hero-manifesto {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+  .hero-cta-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}
+
+/* Micro Contact Strip */
+.hero-contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.contact-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pill-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.pill-val {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.copy-hint {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .hero-contact-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .contact-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Editorial Portrait with Crop Marks (Masum / Studio ref) */
+.editorial-portrait-frame {
+  position: relative;
+  padding: 14px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.crop-mark {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--primary);
+  line-height: 1;
+  user-select: none;
+}
+
+.crop-mark.top-left { top: 0; left: 0; }
+.crop-mark.top-right { top: 0; right: 0; }
+.crop-mark.bottom-left { bottom: 0; left: 0; }
+.crop-mark.bottom-right { bottom: 0; right: 0; }
+
+.photo-container {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.editorial-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: contrast(1.05);
+}
+
+.editorial-portrait-frame:hover .editorial-photo {
+  transform: scale(1.03);
+}
+
+.photo-caption-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.caption-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Ecosystem & Brand Trust Strip (Monochromatic Marquee)
+   -------------------------------------------------------------------------- */
+.trust-marquee-section {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-surface);
+}
+
+.marquee-label {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.brand-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.brand-pill {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .brand-pills-row {
+    gap: 0.45rem;
+  }
+  .brand-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Key Metrics Strip (Elizabeth Olsen / Michael ref style)
+   -------------------------------------------------------------------------- */
+.metrics-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .metric-item {
+    padding-left: 0.85rem;
+  }
+}
+
+.metric-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.metric-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 0.45rem;
+}
+
+.metric-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. Section Headings (Numbered 01, 02, 03...)
+   -------------------------------------------------------------------------- */
+.section-container {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 3rem 0;
+  }
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.section-subheading {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  max-width: 680px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Curated Works & Case Studies ("01 / Selected Works")
+   -------------------------------------------------------------------------- */
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.work-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .work-card {
+    padding: 1.35rem 1.15rem;
+  }
+}
+
+.work-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.work-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .work-card-title {
+    font-size: 1.15rem;
+  }
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.work-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .work-body-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.work-block {
+  padding: 1.15rem;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.work-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.work-block p, .work-block li {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.work-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.work-block li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.work-block li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-family: var(--font-mono);
+}
+
+.work-outcome-block {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.outcome-icon {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.outcome-text {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   11. Career Timeline & Chronology ("02 / Experience")
+   -------------------------------------------------------------------------- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .exp-card {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.exp-card:hover {
+  border-color: var(--border-light);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exp-role-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+  .exp-role-title {
+    font-size: 1.1rem;
+  }
+}
+
+.exp-company {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 0.2rem;
+}
+
+.exp-period-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border);
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.exp-bullets li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.exp-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   12. Education Section ("03 / Academic")
+   -------------------------------------------------------------------------- */
+.edu-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+}
+
+@media (max-width: 640px) {
+  .edu-card {
+    padding: 1.35rem 1.15rem;
+  }
+}
+
+.edu-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.edu-school-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+  .edu-school-name {
+    font-size: 1.15rem;
+  }
+}
+
+.edu-degree-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 0.25rem;
+}
+
+.gpa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.825rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. Skills Matrix ("04 / Capabilities")
+   -------------------------------------------------------------------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.skill-category-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+}
+
+@media (max-width: 640px) {
+  .skill-category-card {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.skill-cat-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   14. Giant Impact Footer CTA (Elizabeth Olsen style)
+   -------------------------------------------------------------------------- */
+.footer-cta-section {
+  padding: 5rem 0 3rem 0;
+  border-bottom: none;
+}
+
+.footer-cta-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .footer-cta-box {
+    padding: 2rem 1.25rem 1.75rem 1.25rem;
+  }
+}
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.footer-huge-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .footer-desc {
+    font-size: 0.925rem;
+  }
+}
+
+/* Giant Clickable Email Action */
+.giant-email-wrap {
+  margin: 2.25rem 0;
+}
+
+.giant-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 720px;
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-subtle);
+  border: 2px dashed var(--border-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.giant-email-btn:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-subtle);
+}
+
+.email-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3.5vw, 2.1rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.email-copy-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--bg-surface);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .giant-email-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 1rem 1.15rem;
+  }
+}
+
+.footer-channels-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+  .footer-channels-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .footer-channels-row .btn {
+    width: 100%;
+  }
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .footer-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Mobile Floating Action Bar
+   -------------------------------------------------------------------------- */
+.mobile-floating-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-floating-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 45;
+    background-color: rgba(10, 10, 10, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border);
+    padding: 0.5rem 0.85rem calc(0.5rem + env(safe-area-inset-bottom, 0px)) 0.85rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  [data-theme="warm"] .mobile-floating-bar {
+    background-color: rgba(247, 245, 240, 0.94);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-bar-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.825rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+    line-height: 1.2;
+  }
+
+  .mobile-bar-primary {
+    background-color: var(--primary);
+    color: #FFFFFF;
+  }
+
+  .mobile-bar-outline {
+    background-color: var(--bg-surface);
+    border-color: var(--border);
+    color: var(--text-main);
+  }
+
+  .mobile-bar-ghost {
+    background-color: transparent;
+    border-color: var(--border);
+    color: var(--text-secondary);
+    flex: 0 0 auto;
+    padding: 0.65rem 0.75rem;
+  }
+
+  body {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Contact Modal
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-overlay);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 90;
+}
+
+.modal-backdrop.open {
+  display: flex;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.modal-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.modal-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.contact-type-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.contact-val {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   17. Toast Notification
+   -------------------------------------------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--text-main);
+  color: var(--text-inverse);
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .toast {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(10px);
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 2rem);
+    text-align: center;
+  }
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. ATS Printable Stylesheet (@media print)
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: A4 portrait;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    line-height: 1.4;
+    padding-bottom: 0 !important;
+  }
+
+  .site-header,
+  .hero-micro-bar,
+  .hero-stamp-badge,
+  .trust-marquee-section,
+  .hero-cta-group,
+  .hero-visual-col,
+  .footer-cta-section,
+  .mobile-floating-bar,
+  .toast,
+  .modal-backdrop,
+  .btn,
+  .arrow-glyph {
+    display: none !important;
+  }
+
+  .hero-section {
+    padding: 0 !important;
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-huge-title {
+    font-size: 24pt !important;
+    color: #000 !important;
+  }
+
+  .title-accent {
+    color: #000 !important;
+  }
+
+  .section-container {
+    padding: 1.25rem 0 !important;
+    border-bottom: 1px solid #CCC !important;
+  }
+
+  .section-number {
+    border: none !important;
+    padding: 0 !important;
+    color: #000 !important;
+  }
+
+  .section-heading {
+    font-size: 14pt !important;
+    color: #000 !important;
+  }
+
+  .work-card, .exp-card, .edu-card, .skill-category-card {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem 0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}

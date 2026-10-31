@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Saida Zakiyah · Portfolio & Professional Resume</title>
+  <meta name="description" content="Portfolio & Professional Resume of Saida Zakiyah – Marketplace Operations, Public Administration & Customer Support Specialist. Graduate of UIN Syarif Hidayatullah Jakarta (GPA 3.64).">
+  <meta name="theme-color" content="#0D0D0D" id="theme-color-meta">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>SZ</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Floating Island Navbar
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-monogram">SZ</span>
+        <span class="brand-name">Saida Zakiyah</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#works" class="nav-link" data-i18n="navWorks">Karya & Kasus</a>
+        <a href="#experience" class="nav-link" data-i18n="navExperience">Pengalaman</a>
+        <a href="#education" class="nav-link" data-i18n="navEducation">Pendidikan</a>
+        <a href="#skills" class="nav-link" data-i18n="navSkills">Keahlian</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">Kontak</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Switcher Pill -->
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+          <button id="lang-id-btn" class="lang-btn active" type="button" aria-pressed="true">ID</button>
+          <button id="lang-en-btn" class="lang-btn" type="button" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn" class="btn btn-icon" type="button" aria-label="Toggle visual theme" title="Ganti Tema">
+          <span id="theme-icon">☀️</span>
+        </button>
+
+        <!-- Quick Contact CTA -->
+        <button id="open-contact-modal-btn" class="btn btn-primary btn-sm open-contact-trigger" type="button">
+          <span data-i18n="btnBookCall">Hubungi</span>
+          <span class="arrow-glyph">↗</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Hero Section (Asymmetric Editorial Style)
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <!-- Micro Metadata Ticker (Inspired by Elizabeth Olsen ref) -->
+      <div class="hero-micro-bar">
+        <span class="micro-tag">[ JAKARTA, ID &bull; GMT+7 ]</span>
+        <span class="micro-status">
+          <span class="pulse-dot"></span>
+          <span id="hero-status-text" data-i18n="statusText">AVAILABLE FOR HIRE</span>
+        </span>
+        <span class="micro-time" id="live-time-display">OUR TIME 00:00:00</span>
+      </div>
+
+      <!-- Giant Display Name -->
+      <div class="hero-headline-wrap">
+        <h1 class="hero-huge-title">
+          <span>SAIDA</span>
+          <span class="title-accent">ZAKIYAH</span>
+        </h1>
+        <div class="hero-stamp-badge" title="Marketplace & Public Admin Specialist">
+          <svg viewBox="0 0 100 100" class="stamp-svg">
+            <path id="stamp-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent"/>
+            <text font-size="9.5" font-weight="700" letter-spacing="2">
+              <textPath href="#stamp-path">OPERATIONS RIGOR &bull; PUBLIC ADMIN &bull; </textPath>
+            </text>
+          </svg>
+          <div class="stamp-center">✦</div>
+        </div>
+      </div>
+
+      <!-- 2-Column Split Body -->
+      <div class="hero-grid">
+        <div class="hero-copy-col">
+          <p class="hero-role-label" id="hero-title">
+            Spesialis Operasional Marketplace, Administrasi Publik & Layanan Pelanggan
+          </p>
+          <p class="hero-manifesto" id="hero-bio">
+            Spesialis operasional marketplace dan administrasi publik lulusan UIN Jakarta (IPK 3.64). Berpengalaman mengelola toko multi-kanal di Batavia Uniform, verifikasi data kebencanaan Kemensos RI, dan disiplin audit inventaris.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <a id="hero-wa-btn" href="https://wa.me/6289601255561?text=Halo%20Saida%20Zakiyah,%20saya%20melihat%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span data-i18n="btnChatWa">Hubungi via WhatsApp</span>
+              <span class="arrow-glyph">↗</span>
+            </a>
+
+            <button type="button" class="btn btn-outline btn-lg open-contact-trigger">
+              <span data-i18n="btnAllChannels">Semua Jalur Kontak</span>
+            </button>
+          </div>
+
+          <!-- Verified Micro Contact Strip -->
+          <div class="hero-contact-strip">
+            <button class="contact-pill copyable" data-copy="saidazkyh24@gmail.com" title="Klik untuk salin email">
+              <span class="pill-label">EMAIL</span>
+              <span class="pill-val">saidazkyh24@gmail.com</span>
+              <span class="copy-hint">⧉</span>
+            </button>
+
+            <button class="contact-pill copyable" data-copy="089601255561" title="Klik untuk salin no telp/WA">
+              <span class="pill-label">TELP / WA</span>
+              <span class="pill-val">+62 896-0125-5561</span>
+              <span class="copy-hint">⧉</span>
+            </button>
+
+            <a href="https://www.linkedin.com/in/saida-zakiyah" target="_blank" rel="noopener noreferrer" class="contact-pill">
+              <span class="pill-label">LINKEDIN</span>
+              <span class="pill-val">saida-zakiyah</span>
+              <span class="arrow-glyph">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Editorial Portrait with Crop Marks (Inspired by Masum & Michael ref) -->
+        <div class="hero-visual-col">
+          <div class="editorial-portrait-frame">
+            <div class="crop-mark top-left">⌜</div>
+            <div class="crop-mark top-right">⌝</div>
+            <div class="crop-mark bottom-left">⌞</div>
+            <div class="crop-mark bottom-right">⌟</div>
+
+            <div class="photo-container">
+              <img src="assets/saida-profile.jpg" alt="Foto Resmi Saida Zakiyah" class="editorial-photo" width="380" height="380">
+            </div>
+
+            <div class="photo-caption-tag">
+              <span class="caption-dot"></span>
+              <span>UIN JAKARTA &bull; IPK 3.64 (CUM LAUDE)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Ecosystem & Brand Trust Strip (Monochromatic Marquee)
+       ========================================================================= -->
+  <section class="trust-marquee-section">
+    <div class="container">
+      <div class="marquee-label" data-i18n="trustLabel">EKOSISTEM &amp; PLATFORM PENGALAMAN KERJA:</div>
+      <div class="brand-pills-row">
+        <span class="brand-pill">BATAVIA UNIFORM</span>
+        <span class="brand-pill">KEMENSOS RI</span>
+        <span class="brand-pill">SHOPEE SELLER</span>
+        <span class="brand-pill">TIKTOK SHOP</span>
+        <span class="brand-pill">WHATSAPP CRM</span>
+        <span class="brand-pill">LOOPLINE COFFEE</span>
+        <span class="brand-pill">UIN SYARIF HIDAYATULLAH</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       High-Impact Key Metrics Strip (Elizabeth Olsen / Michael ref style)
+       ========================================================================= -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid" id="stats-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 01: Curated Works & Operational Deep Dives
+       ========================================================================= -->
+  <section class="section-container" id="works">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-number">01</span>
+        <div>
+          <h2 class="section-heading" data-i18n="casesHeading">STUDI KASUS OPERASIONAL NYATA</h2>
+          <p class="section-subheading" data-i18n="casesSubheading">Penanganan kendala bisnis harian dengan ketelitian data, kecepatan SLA, dan empati pelanggan.</p>
+        </div>
+      </div>
+
+      <div class="works-list" id="case-studies-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 02: Career Timeline & Chronology
+       ========================================================================= -->
+  <section class="section-container" id="experience">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-number">02</span>
+        <div>
+          <h2 class="section-heading" data-i18n="expHeading">PENGALAMAN KERJA &amp; TANGGUNG JAWAB</h2>
+          <p class="section-subheading" data-i18n="expSubheading">Rekam jejak profesional dari operasional toko daring multi-kanal, logistik bencana alam, hingga hospitality.</p>
+        </div>
+      </div>
+
+      <div class="experience-list" id="experience-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 03: Academic Foundation & Fieldwork
+       ========================================================================= -->
+  <section class="section-container" id="education">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-number">03</span>
+        <div>
+          <h2 class="section-heading" data-i18n="eduHeading">LATAR BELAKANG PENDIDIKAN</h2>
+          <p class="section-subheading" data-i18n="eduSubheading">Pemberdayaan sosial, metodologi riset lapangan, dan ketertiban akademik.</p>
+        </div>
+      </div>
+
+      <div id="education-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 04: Skills & Core Competencies Matrix
+       ========================================================================= -->
+  <section class="section-container" id="skills">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-number">04</span>
+        <div>
+          <h2 class="section-heading" data-i18n="skillsHeading">KEAHLIAN &amp; DOMAIN KERJA</h2>
+          <p class="section-subheading" data-i18n="skillsSubheading">Kombinasi perangkat lunak kerja, ketertiban rekonsiliasi data, serta etos kerja lapangan.</p>
+        </div>
+      </div>
+
+      <div class="skills-grid" id="skills-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 05: Giant Call To Action & Footer (Elizabeth Olsen ref)
+       ========================================================================= -->
+  <section class="section-container footer-cta-section" id="contact">
+    <div class="container">
+      <div class="footer-cta-box">
+        <div class="footer-tagline">[ TERTARIK BEKERJA SAMA? ]</div>
+        <h2 class="footer-huge-title" data-i18n="footerHugeCta">
+          MARI CIPTAKAN OPERASIONAL YANG RAPI &amp; SOLID.
+        </h2>
+        <p class="footer-desc" data-i18n="footerDesc">
+          Tersedia untuk kesempatan kerja penuh waktu (Full-Time) maupun kontrak profesional di bidang Marketplace Operations, Administrasi, Layanan Pelanggan, dan Logistik Data.
+        </p>
+
+        <!-- Giant Clickable Email Action -->
+        <div class="giant-email-wrap">
+          <button class="giant-email-btn copyable" data-copy="saidazkyh24@gmail.com" title="Klik untuk salin email">
+            <span class="email-text">saidazkyh24@gmail.com</span>
+            <span class="email-copy-badge" data-i18n="btnCopyEmail">Salin Email ⧉</span>
+          </button>
+        </div>
+
+        <!-- Social & Direct Channels -->
+        <div class="footer-channels-row">
+          <a href="https://wa.me/6289601255561?text=Halo%20Saida%20Zakiyah,%20saya%20melihat%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>WhatsApp (+62 896-0125-5561)</span>
+            <span class="arrow-glyph">↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/saida-zakiyah" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+            <span>LinkedIn Profile</span>
+            <span class="arrow-glyph">↗</span>
+          </a>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-colophon">
+            <strong>Saida Zakiyah</strong> &bull; <span id="footer-address-text">Jakarta Timur, DKI Jakarta</span>
+          </div>
+          <div class="footer-meta">
+            <span>&copy; 2026 SAIDA ZAKIYAH &bull; ALL RIGHTS RESERVED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Mobile Floating Quick Action Bar (Thumb-Zone Ergonomics)
+       ========================================================================= -->
+  <aside class="mobile-floating-bar" aria-label="Aksi Cepat Kontak">
+    <a href="https://wa.me/6289601255561?text=Halo%20Saida%20Zakiyah,%20saya%20melihat%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-primary">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <button type="button" class="mobile-bar-btn mobile-bar-outline open-contact-trigger" aria-label="Buka Opsi Kontak">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span data-i18n="btnContact">Kontak</span>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       Contact Modal Dialog
+       ========================================================================= -->
+  <div id="contact-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-box">
+      <button id="close-modal-btn" class="modal-close-btn" type="button" aria-label="Tutup dialog">&times;</button>
+      <h2 id="modal-heading" class="modal-title" data-i18n="modalTitle">Hubungi Saida Zakiyah</h2>
+      <p class="modal-desc" data-i18n="modalDesc">Silakan hubungi saya melalui jalur resmi berikut untuk wawancara kerja atau tawaran kolaborasi.</p>
+
+      <div class="modal-contact-list">
+        <div class="modal-contact-item">
+          <div>
+            <div class="contact-type-label">EMAIL RESMI</div>
+            <div class="contact-val">saidazkyh24@gmail.com</div>
+          </div>
+          <button class="btn btn-outline btn-sm copyable" data-copy="saidazkyh24@gmail.com" data-i18n="btnCopy">Salin</button>
+        </div>
+
+        <div class="modal-contact-item">
+          <div>
+            <div class="contact-type-label">WHATSAPP / TELEPON</div>
+            <div class="contact-val">+62 896-0125-5561</div>
+          </div>
+          <a href="https://wa.me/6289601255561" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="btnChat">Chat</a>
+        </div>
+
+        <div class="modal-contact-item">
+          <div>
+            <div class="contact-type-label">LINKEDIN</div>
+            <div class="contact-val">linkedin.com/in/saida-zakiyah</div>
+          </div>
+          <a href="https://www.linkedin.com/in/saida-zakiyah" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="btnOpen">Buka</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Element -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Tersalin ke clipboard!</div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
