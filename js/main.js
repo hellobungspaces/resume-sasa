@@ -16,48 +16,48 @@ const uiTranslations = {
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
   trustLabel: {
-    id: "EKOSISTEM & PLATFORM PENGALAMAN KERJA:",
-    en: "ECOSYSTEM & WORK EXPERIENCE PLATFORMS:"
+    id: "EKOSISTEM & PLATFORM PENGALAMAN:",
+    en: "EXPERIENCE ECOSYSTEM & PLATFORMS:"
   },
   casesHeading: {
-    id: "STUDI KASUS OPERASIONAL NYATA",
-    en: "CURATED WORKS & OPERATIONAL DEEP DIVES"
+    id: "STUDI KASUS OPERASIONAL",
+    en: "FEATURED CASE STUDIES"
   },
   casesSubheading: {
-    id: "Penanganan kendala bisnis harian dengan ketelitian data, kecepatan SLA, dan empati pelanggan.",
-    en: "Resolving practical day-to-day business bottlenecks through data accuracy, SLA speed, and customer empathy."
+    id: "Penyelesaian kendala operasional toko, validasi data, dan audit stok.",
+    en: "Practical solutions for storefront operations, data auditing, and inventory control."
   },
   expHeading: {
-    id: "PENGALAMAN KERJA & TANGGUNG JAWAB",
-    en: "CAREER TIMELINE & RESPONSIBILITIES"
+    id: "PENGALAMAN KERJA",
+    en: "WORK EXPERIENCE"
   },
   expSubheading: {
-    id: "Rekam jejak profesional dari operasional toko daring multi-kanal, logistik bencana alam, hingga hospitality.",
-    en: "Professional track record across multi-channel e-commerce operations, disaster relief administration, and hospitality."
+    id: "Rekam jejak di e-commerce marketplace, kementerian, dan hospitality.",
+    en: "Track record across marketplace operations, government, and hospitality."
   },
   eduHeading: {
-    id: "LATAR BELAKANG PENDIDIKAN",
-    en: "ACADEMIC FOUNDATION & FIELDWORK"
+    id: "PENDIDIKAN",
+    en: "EDUCATION"
   },
   eduSubheading: {
-    id: "Pemberdayaan sosial, metodologi riset lapangan, dan ketertiban akademik.",
-    en: "Community empowerment, field research methodology, and academic rigor."
+    id: "Lulusan S1 Pengembangan Masyarakat Islam UIN Jakarta (IPK 3.64 / Cum Laude).",
+    en: "Bachelor of Social Sciences from UIN Jakarta (GPA 3.64 / Cum Laude)."
   },
   skillsHeading: {
-    id: "KEAHLIAN & DOMAIN KERJA",
-    en: "CAPABILITIES & OPERATIONAL DOMAINS"
+    id: "KEAHLIAN & DOMAIN",
+    en: "SKILLS & DOMAINS"
   },
   skillsSubheading: {
-    id: "Kombinasi perangkat lunak kerja, ketertiban rekonsiliasi data, serta etos kerja lapangan.",
-    en: "Blend of digital software, data reconciliation rigor, and grassroots work ethic."
+    id: "Alat operasional marketplace, administrasi data, dan kompetensi kerja.",
+    en: "Operational tooling, data administration, and core competencies."
   },
   footerHugeCta: {
-    id: "MARI CIPTAKAN OPERASIONAL YANG RAPI & SOLID.",
-    en: "LET'S BUILD RIGOROUS, RELIABLE OPERATIONS."
+    id: "MARI BEKERJA SAMA.",
+    en: "LET'S WORK TOGETHER."
   },
   footerDesc: {
-    id: "Tersedia untuk kesempatan kerja penuh waktu (Full-Time) maupun kontrak profesional di bidang Marketplace Operations, Administrasi, Layanan Pelanggan, dan Logistik Data.",
-    en: "Available for full-time employment or professional contracts across Marketplace Operations, Administration, Customer Support, and Crisis Data Logistics."
+    id: "Terbuka untuk posisi Full-Time maupun kontrak di bidang operasional marketplace, administrasi, dan layanan pelanggan.",
+    en: "Open for Full-Time or Contract roles in marketplace operations, administration, and customer service."
   },
   btnCopyEmail: { id: "Salin Email ⧉", en: "Copy Email ⧉" },
   btnContact: { id: "Kontak", en: "Contact" },
@@ -175,25 +175,24 @@ function renderCaseStudies(lang) {
       <article class="work-card">
         <div class="work-header">
           <div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); font-weight: 700; margin-bottom: 0.35rem;">
-              PROJECT ${num} &bull; CASE STUDY
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); font-weight: 700; margin-bottom: 0.25rem;">
+              CASE ${num}
             </div>
             <h3 class="work-card-title">${cs.title[lang]}</h3>
           </div>
           <div class="work-tags">
-            <span class="tag-badge">CASE STUDY</span>
             <span class="tag-badge">OPERATIONS</span>
           </div>
         </div>
 
         <div class="work-body-grid">
           <div class="work-block">
-            <div class="work-block-label">${lang === "id" ? "1. Konteks & Tantangan Operasional" : "1. Operational Context & Challenge"}</div>
+            <div class="work-block-label">${lang === "id" ? "Tantangan" : "Challenge"}</div>
             <p>${cs.context[lang]}</p>
           </div>
 
           <div class="work-block">
-            <div class="work-block-label">${lang === "id" ? "2. Tindakan Eksekusi Nyata" : "2. Actionable Implementation"}</div>
+            <div class="work-block-label">${lang === "id" ? "Eksekusi" : "Execution"}</div>
             <ul>
               ${cs.actions[lang].map((act) => `<li>${act}</li>`).join("")}
             </ul>
@@ -203,7 +202,7 @@ function renderCaseStudies(lang) {
         <div class="work-outcome-block">
           <span class="outcome-icon">✓</span>
           <div class="outcome-text">
-            <strong>${lang === "id" ? "Hasil Terukur:" : "Measurable Outcome:"}</strong> ${cs.outcome[lang]}
+            <strong>${lang === "id" ? "Hasil:" : "Result:"}</strong> ${cs.outcome[lang]}
           </div>
         </div>
       </article>
@@ -237,11 +236,7 @@ function renderExperience(lang) {
           </div>
         </div>
 
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.65;">
-          ${exp.summary[lang]}
-        </p>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0;">
           ${exp.tags.map((t) => `<span class="tag-badge">${t}</span>`).join("")}
         </div>
 
@@ -276,23 +271,18 @@ function renderEducation(lang) {
           </div>
         </div>
         <div class="gpa-pill">
-          <span>IPK: ${education.gpa} / 4.00</span>
+          <span>IPK: ${education.gpa}</span>
           <span>&bull; ${education.honors[lang]}</span>
         </div>
       </div>
 
-      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.25rem;">
-        <strong>${lang === "id" ? "Fokus Keilmuan & Riset:" : "Academic & Research Focus:"}</strong> ${education.focus[lang]}
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+        ${education.focus[lang]}
       </p>
 
-      <div style="background-color: var(--bg-subtle); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-        <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--primary); letter-spacing: 0.08em; margin-bottom: 0.65rem;">
-          ${lang === "id" ? "Pengalaman Lapangan & Keunggulan Akademis" : "Fieldwork Experience & Academic Highlights"}
-        </div>
-        <ul class="exp-bullets">
-          ${education.highlights[lang].map((h) => `<li>${h}</li>`).join("")}
-        </ul>
-      </div>
+      <ul class="exp-bullets">
+        ${education.highlights[lang].map((h) => `<li>${h}</li>`).join("")}
+      </ul>
     </div>
   `;
 }
@@ -322,9 +312,9 @@ function renderSkills(lang) {
         itemsHtml = cat.items
           .map(
             (item) => `
-          <div style="padding: 0.75rem; border-radius: var(--radius-sm); background-color: var(--bg-subtle); border: 1px solid var(--border); margin-bottom: 0.5rem;">
-            <div class="skill-name" style="color: var(--primary); font-weight: 700;">${item.name[lang]}</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">${item.desc[lang]}</div>
+          <div class="skill-item-row">
+            <span class="skill-name">${item.name[lang]}</span>
+            <span class="tag-badge">${item.badge[lang]}</span>
           </div>
         `
           )
@@ -338,7 +328,7 @@ function renderSkills(lang) {
               <span style="font-size: 1.15rem;">${item.icon}</span>
               <span class="skill-name">${item.name[lang]}</span>
             </div>
-            <span class="tag-badge">Verified</span>
+            <span class="tag-badge">Aktif</span>
           </div>
         `
           )

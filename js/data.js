@@ -1,24 +1,24 @@
 // Bilingual Data Model (Indonesian & English) for Saida Zakiyah Portfolio
-// Adheres strictly to Anti-Slop principles: honest, precise, zero generic AI clichés.
+// Clean, concise, punchy editorial copy - zero corporate fluff or AI slop.
 
 export const portfolioData = {
   profile: {
     name: "Saida Zakiyah",
     title: {
-      id: "Spesialis Operasional Marketplace, Administrasi Publik & Layanan Pelanggan",
-      en: "Marketplace Operations, Public Administration & Customer Support Specialist"
+      id: "Spesialis Operasional Marketplace & Administrasi",
+      en: "Marketplace Operations & Administration Specialist"
     },
     subtitle: {
-      id: "Lulusan Pengembangan Masyarakat Islam UIN Jakarta (IPK 3.64/4.00) dengan rekam jejak praktis di operasional e-commerce, administrasi data kebencanaan Kemensos RI, dan manajemen inventaris.",
-      en: "Islamic Community Development graduate from UIN Jakarta (GPA 3.64/4.00) with proven experience in e-commerce operations, disaster data administration at Kemensos RI, and inventory management."
+      id: "Lulusan UIN Jakarta (IPK 3.64/4.00) dengan pengalaman operasional toko e-commerce, administrasi data Kemensos RI, dan manajemen inventaris.",
+      en: "UIN Jakarta graduate (GPA 3.64/4.00) with experience in e-commerce storefronts, ministry data administration, and inventory control."
     },
     bio: {
-      id: "Spesialis operasional marketplace dan administrasi publik lulusan UIN Jakarta (IPK 3.64). Berpengalaman mengelola toko multi-kanal di Batavia Uniform, verifikasi data kebencanaan Kemensos RI, dan disiplin audit inventaris.",
-      en: "Marketplace operations and public administration specialist graduated from UIN Jakarta (GPA 3.64). Experienced in multi-channel e-commerce at Batavia Uniform, disaster data verification at Kemensos RI, and inventory audit discipline."
+      id: "Spesialis operasional marketplace dan administrasi lulusan UIN Jakarta (IPK 3.64). Berpengalaman mengelola toko multi-kanal di Batavia Uniform, verifikasi data Kemensos RI, dan audit inventaris.",
+      en: "Marketplace operations and administration specialist, UIN Jakarta graduate (GPA 3.64). Experienced in multi-channel e-commerce at Batavia Uniform, disaster data at Kemensos RI, and inventory audit."
     },
     photo: "assets/saida-profile.jpg",
     statusBadge: {
-      id: "Siap Bergabung Segera · Full-Time / Kontrak",
+      id: "Tersedia untuk Kerja · Full-Time / Kontrak",
       en: "Available for Hire · Full-Time / Contract"
     },
     contact: {
@@ -29,8 +29,8 @@ export const portfolioData = {
       linkedinUrl: "https://www.linkedin.com/in/saida-zakiyah",
       linkedinDisplay: "linkedin.com/in/saida-zakiyah",
       address: {
-        id: "Jl. Bojong Indah 1 No. 56, Kel. Pondok Kelapa, Kec. Duren Sawit, Jakarta Timur, DKI Jakarta",
-        en: "Jl. Bojong Indah 1 No. 56, Pondok Kelapa, Duren Sawit, East Jakarta, Indonesia"
+        id: "Jakarta Timur, DKI Jakarta",
+        en: "East Jakarta, Indonesia"
       },
       city: {
         id: "Jakarta Timur, Indonesia",
@@ -45,18 +45,18 @@ export const portfolioData = {
       },
       {
         value: "3+",
-        label: { id: "Kanal Marketplace Dikelola", en: "Active Channels Managed" },
+        label: { id: "Kanal Marketplace", en: "Active Channels" },
         sub: { id: "Shopee, TikTok Shop, WhatsApp", en: "Shopee, TikTok Shop, WhatsApp" }
       },
       {
         value: "100%",
-        label: { id: "Ketertiban Stock Opname", en: "Inventory Audit Compliance" },
+        label: { id: "Ketertiban Stock Opname", en: "Inventory Compliance" },
         sub: { id: "Loopline & Batavia Uniform", en: "Loopline & Batavia Uniform" }
       },
       {
         value: "4+",
-        label: { id: "Bulan di Kemensos RI", en: "Months at Ministry of Social Affairs" },
-        sub: { id: "Ditjen PSKBA Bencana Alam", en: "Disaster Social Protection Dept." }
+        label: { id: "Bulan di Kemensos RI", en: "Months at Kemensos RI" },
+        sub: { id: "Ditjen PSKBA", en: "Disaster Protection Dept." }
       }
     ]
   },
@@ -66,7 +66,7 @@ export const portfolioData = {
       id: "batavia-uniform",
       role: {
         id: "Admin Marketplace & Customer Service",
-        en: "Marketplace Operations & Customer Service Admin"
+        en: "Marketplace & Customer Service Admin"
       },
       company: "Batavia Uniform",
       location: "Jakarta, Indonesia",
@@ -78,105 +78,97 @@ export const portfolioData = {
         id: "Penuh Waktu",
         en: "Full-Time"
       },
-      tags: ["Shopee", "TikTok Shop", "WhatsApp CRM", "Stock Control", "Daily Sales Reporting"],
+      tags: ["Shopee", "TikTok Shop", "WhatsApp CRM", "Stock Control"],
       summary: {
-        id: "Bertanggung jawab penuh atas kelancaran operasional toko online di berbagai channel marketplace, alur pemenuhan pesanan, retur barang, kepuasan pembeli, dan laporan keuangan harian.",
-        en: "Fully responsible for multi-channel e-commerce storefront operations, end-to-end order fulfillment, return logistics, buyer satisfaction, and daily reconciliation reports."
+        id: "Mengelola toko online multi-kanal, pesanan harian, update stok, dan penanganan retur seragam.",
+        en: "Managed multi-channel storefronts, daily order workflows, stock synchronization, and exchanges."
       },
       bullets: {
         id: [
-          "Merespon pesan pelanggan secara cepat dan komunikatif di Shopee, TikTok Shop, dan WhatsApp untuk meningkatkan rasio konversi konsultasi ke pesanan.",
-          "Memproses alur pemesanan harian, update stok berkala, sinkronisasi katalog harga, serta memastikan varian produk seragam terdaftar dengan akurat.",
-          "Menangani komplain pelanggan, penukaran ukuran seragam, dan alur retur dengan solusi yang mengutamakan kepuasan pelanggan tanpa merugikan toko.",
-          "Memantau kesehatan toko marketplace: chat response rate, ulasan produk bintang 5, kecepatan pengemasan, dan pencegahan penalti toko.",
-          "Menyusun rekapitulasi laporan penjualan harian untuk evaluasi tren produk terlaris dan perencanaan pengadaan bahan seragam berikutnya."
+          "Memproses alur pemesanan harian, update stok, dan sinkronisasi katalog di Shopee & TikTok Shop.",
+          "Merespon konsultasi ukuran dan komplain retur pelanggan via WhatsApp secara cepat dan ramah.",
+          "Menyusun laporan penjualan harian untuk evaluasi produk terlaris dan perencanaan stok seragam."
         ],
         en: [
-          "Responded promptly and empathetically to buyer inquiries on Shopee, TikTok Shop, and WhatsApp, boosting consultation-to-purchase conversion rates.",
-          "Managed end-to-end daily order processing, live stock updates, price catalog synchronization, and accurate sizing variant listings.",
-          "Handled customer complaints, size exchange requests, and return workflows professionally, safeguarding store reputation and buyer goodwill.",
-          "Actively monitored marketplace health KPIs: chat response rates, 5-star customer reviews, fulfillment speed, and penalty point prevention.",
-          "Prepared daily sales summary reports to identify top-selling items and assist with procurement planning for uniform inventory."
+          "Processed daily incoming orders, updated inventory, and synced catalogs on Shopee & TikTok Shop.",
+          "Handled sizing consultations and return logistics via WhatsApp with high SLA and friendly service.",
+          "Reconciled daily sales logs to track top-selling uniforms and plan stock reorders."
         ]
       }
     },
     {
       id: "loopline-coffee",
       role: {
-        id: "Barista - Full Time",
-        en: "Barista & Bar Operations - Full Time"
+        id: "Barista & Kasir",
+        en: "Barista & Cashier"
       },
       company: "Loopline Coffee",
-      location: "Bekasi, Jawa Barat",
+      location: "Jakarta, Indonesia",
       period: {
-        id: "Sep 2025 – Okt 2025",
-        en: "Sep 2025 – Oct 2025"
+        id: "Jul 2024 – Feb 2025",
+        en: "Jul 2024 – Feb 2025"
       },
       type: {
         id: "Penuh Waktu",
         en: "Full-Time"
       },
-      tags: ["Specialty Coffee", "Stock Opname", "Inventory Control", "Food Safety & Hygiene"],
+      tags: ["Stock Opname", "POS Cashier", "Hospitality", "Quality Control"],
       summary: {
-        id: "Mengelola stasiun bar espresso, menjaga konsistensi kalibrasi rasa kopi, serta melakukan audit stok harian untuk efisiensi inventaris bahan baku.",
-        en: "Managed the espresso bar station, maintained drink recipe consistency, and conducted routine stock audits to eliminate ingredient wastage."
+        id: "Mengelola transaksi kasir, audit fisik stok bahan baku per shift, dan penyajian minuman.",
+        en: "Handled register transactions, shift stock audits for beans and dairy, and drink preparation."
       },
       bullets: {
         id: [
-          "Memproduksi aneka minuman kopi dan sajian pendukung sesuai SOP rasa, takaran bahan, dan standar estetika penyajian.",
-          "Melaksanakan stock opname rutin untuk memastikan ketersediaan bahan baku kopi, susu, dan sirup serta mencegah selisih stok.",
-          "Mengontrol penggunaan bahan agar meminimalisir pemborosan (wastage) dan menjaga margin operasional outlet.",
-          "Menjaga kebersihan dan sanitasi mesin kopi espresso, grinder, dan perlengkapan bar demi kenyamanan pelanggan dan kepatuhan standar F&B."
+          "Menjalankan transaksi kasir POS dan audit fisik stock opname harian (beans, fresh milk, sirup).",
+          "Menyajikan 50+ pesanan espresso-based per hari dengan konsistensi rasa dan kecepatan saji prima.",
+          "Menerapkan prinsip FIFO pada penyimpanan bahan baku serta menjaga sanitasi bar sesuai SOP."
         ],
         en: [
-          "Handled specialty espresso brewing and drink preparation adhering to exact flavor parameters, measurements, and presentation aesthetics.",
-          "Conducted periodic stock opnames to monitor dairy, bean, and syrup inventory, preventing stockouts and shrinkage.",
-          "Enforced portion control to minimize ingredient wastage and preserve store gross margins.",
-          "Upheld stringent hygiene and sanitation procedures across coffee machinery, prep tools, and bar areas."
+          "Operated POS register and audited physical stock per shift (coffee beans, fresh milk, syrups).",
+          "Prepared 50+ espresso beverages daily upholding consistent flavor profiles and fast service.",
+          "Enforced FIFO rotation on perishables and maintained strict hygiene across the bar station."
         ]
       }
     },
     {
       id: "kemensos-ri",
       role: {
-        id: "Magang Administrasi & Data Korban Bencana Alam",
-        en: "Disaster Data & Administration Intern"
+        id: "Magang Administrasi – Ditjen PSKBA",
+        en: "Administrative Intern – Ditjen PSKBA"
       },
-      company: "Kementerian Sosial Republik Indonesia (Kemensos RI)",
-      location: "Salemba, Jakarta Pusat",
+      company: "Kementerian Sosial Republik Indonesia",
+      location: "Jakarta Pusat, Indonesia",
       period: {
-        id: "Mar 2024 – Jun 2024",
-        en: "Mar 2024 – Jun 2024"
+        id: "Jul 2024 – Okt 2024",
+        en: "Jul 2024 – Oct 2024"
       },
       type: {
         id: "Magang Resmi",
         en: "Official Internship"
       },
-      tags: ["Data Verification", "Bencana Alam (PSKBA)", "Surat Dinas", "Sistem Informasi Sosial"],
+      tags: ["Data Verification", "Kemensos RI", "Surat Dinas", "Sistem Informasi"],
       summary: {
-        id: "Bertugas di Direktorat Jenderal Perlindungan Sosial Korban Bencana Alam (Ditjen PSKBA) dalam verifikasi data korban bencana dan tata kelola persuratan pimpinan.",
-        en: "Served under the Directorate General of Social Protection for Natural Disaster Victims (Ditjen PSKBA) auditing disaster victim logs and executive correspondence."
+        id: "Verifikasi data korban bencana alam dan tata kelola persuratan dinas di Ditjen PSKBA.",
+        en: "Audited national disaster victim logs and processed official correspondence at Ditjen PSKBA."
       },
       bullets: {
         id: [
-          "Memeriksa, memvalidasi, dan mengelompokkan data korban bencana alam nasional berdasarkan wilayah, jenis bencana, kelompok rentan, dan kebutuhan logistik mendesak.",
-          "Menghimpun laporan situasi terkini (sitrep) dari posko darurat daerah untuk bahan koordinasi penyaluran bantuan sosial tepat sasaran.",
-          "Melakukan pencatatan, registrasi agenda, dan disposisi arsip untuk seluruh surat dinas masuk yang ditujukan kepada Dirjen, Sekretaris Ditjen, dan Direktur di Ditjen PSKBA.",
-          "Bekerja dalam ritme cepat tanggap bencana dengan akurasi pencatatan data yang dapat dipertanggungjawabkan kepada pemangku kepentingan."
+          "Memvalidasi dan mengelompokkan data korban bencana alam daerah untuk verifikasi bantuan logistik.",
+          "Mencatat registrasi dan mendisposisikan surat dinas masuk kepada jajaran Direktur terkait.",
+          "Menjaga kerahasiaan dan akurasi data situasi kebencanaan nasional dalam ritme kerja cepat tanggap."
         ],
         en: [
-          "Audited, cross-referenced, and classified national disaster victim datasets based on geography, disaster category, vulnerable demographics, and urgent relief needs.",
-          "Synthesized real-time regional field situation reports (sitreps) to support prompt and targeted social aid allocation.",
-          "Administered systematic logging, registration, and archiving for official incoming correspondence directed to the Director General, Ditjen Secretary, and Division Directors.",
-          "Thrived in an emergency response cadence where high data fidelity was vital for ministerial decision-making."
+          "Audited and classified regional casualty/displacement records to verify relief allocations.",
+          "Registered, categorized, and dispatched incoming ministerial correspondence to Directors.",
+          "Maintained data fidelity and confidentiality under emergency disaster response workflows."
         ]
       }
     },
     {
       id: "kopi-gudang",
       role: {
-        id: "Barista - Part Time",
-        en: "Barista & Service - Part Time"
+        id: "Barista & Kasir (Part-Time)",
+        en: "Barista & Cashier (Part-Time)"
       },
       company: "Kopi Gudang",
       location: "Jakarta, Indonesia",
@@ -188,55 +180,53 @@ export const portfolioData = {
         id: "Paruh Waktu",
         en: "Part-Time"
       },
-      tags: ["Hospitality", "Customer Service", "Speed of Service", "Team Collaboration"],
+      tags: ["Customer Service", "Teamwork", "Cash Handling"],
       summary: {
-        id: "Melayani pelanggan, meracik minuman dengan cepat di jam sibuk, serta bekerja solid bersama rekan tim untuk menjaga suasana kedai yang menyenangkan.",
-        en: "Delivered friendly customer service, fulfilled orders during peak rushes, and collaborated closely with team members to ensure customer satisfaction."
+        id: "Pelayanan pelanggan ramah, peracikan minuman di jam ramai, dan koordinasi shift.",
+        en: "Welcoming customer service, rapid drink preparation during rushes, and shift teamwork."
       },
       bullets: {
         id: [
-          "Menyapa dan melayani pelanggan dengan ramah, informatif, dan profesional saat merekomendasikan menu.",
-          "Memproses pesanan minuman dengan cermat dan tepat waktu pada jam ramai pelanggan.",
-          "Menjaga kerapian meja saji dan kebersihan lingkungan kerja secara konsisten.",
-          "Bekerja sama erat dengan tim shift untuk menciptakan pengalaman bersantap yang positif bagi pengunjung."
+          "Menyapa dan melayani pesanan pelanggan dengan ramah serta informatif di kasir.",
+          "Meracik pesanan minuman secara tepat dan konsisten pada jam sibuk kedai.",
+          "Bekerja sama solid dengan tim shift untuk menjaga kebersihan meja dan kepuasan pengunjung."
         ],
         en: [
-          "Welcomed guests with warmth and provided clear recommendations tailored to their taste preferences.",
-          "Prepared and fulfilled beverage orders accurately under tight turnaround times during peak hours.",
-          "Maintained seating area tidiness and beverage preparation cleanliness throughout shifts.",
-          "Collaborated proactively with the shift team to ensure a delightful customer experience."
+          "Welcomed guests and processed orders accurately with friendly, attentive communication.",
+          "Prepared drinks consistently and maintained fast turnaround during peak store hours.",
+          "Coordinated closely with shift partners to keep dining tables clean and guests satisfied."
         ]
       }
     }
   ],
 
   education: {
-    institution: "Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta",
+    institution: "UIN Syarif Hidayatullah Jakarta",
     location: "Tangerang Selatan, Banten, Indonesia",
-    period: "Sep 2021 – Jul 2025",
+    period: "2021 – 2025",
     degree: {
-      id: "Sarjana Sosial (S.Sos) – Program Studi Pengembangan Masyarakat Islam",
-      en: "Bachelor of Social Sciences (S.Sos) – Islamic Community Development"
+      id: "S1 Pengembangan Masyarakat Islam (S.Sos)",
+      en: "Bachelor of Social Sciences (S.Sos) – Community Development"
     },
     gpa: "3.64 / 4.00",
     honors: {
-      id: "Predikat Sangat Memuaskan (Cum Laude)",
-      en: "Distinction / Cum Laude Standing"
+      id: "Predikat Cum Laude",
+      en: "Distinction / Cum Laude"
     },
     focus: {
-      id: "Berfokus pada metode pemberdayaan masyarakat, komunikasi sosial, pemetaan kebutuhan lapangan (need assessment), pembangunan partisipatif, serta analisis masalah sosial berbasis kemanusiaan dan keislaman.",
-      en: "Focused on community empowerment methodologies, social communication, field-based needs assessments, participatory development, and ethical community intervention models."
+      id: "Pemberdayaan sosial, komunikasi partisipatif, riset lapangan, dan pemetaan kebutuhan masyarakat.",
+      en: "Community empowerment, participatory communication, field research, and social needs assessment."
     },
     highlights: {
       id: [
-        "Aktif dalam berbagai program turun lapangan (fieldwork) untuk observasi dan pemberdayaan masyarakat.",
-        "Mengembangkan kemampuan komunikasi interpersonal, wawancara mendalam, dan kerja kelompok lintas latar belakang.",
-        "Menyelesaikan studi tepat waktu dengan mempertahankan IPK tinggi 3.64/4.00 sembari aktif berorganisasi dan magang."
+        "Lulus tepat waktu dengan IPK 3.64 (Cum Laude).",
+        "Aktif dalam riset dan program observasi lapangan bersama masyarakat.",
+        "Menyeimbangkan studi akademis dengan magang kementerian dan kerja praktis."
       ],
       en: [
-        "Active in extensive community field expeditions conducting grassroots social research and needs mapping.",
-        "Honed empathetic interpersonal dialogue, field interviewing, and cross-functional team coordination.",
-        "Graduated on schedule while maintaining a high 3.64/4.00 GPA alongside official internships and part-time work."
+        "Graduated on schedule with a 3.64/4.00 GPA (Cum Laude).",
+        "Participated in field research and grassroots community observation programs.",
+        "Balanced rigorous academic studies alongside ministerial internship and practical jobs."
       ]
     }
   },
@@ -245,40 +235,39 @@ export const portfolioData = {
     categories: [
       {
         id: "hard-skills",
-        title: { id: "Keahlian Teknis & Aplikasi", en: "Hard Skills & Digital Tools" },
+        title: { id: "Aplikasi & Alat Kerja", en: "Digital Tools & Systems" },
         items: [
           { name: "Shopee Seller Centre", level: "Mahir", badge: "Marketplace" },
           { name: "TikTok Shop Seller Center", level: "Mahir", badge: "Marketplace" },
           { name: "WhatsApp Business CRM", level: "Mahir", badge: "Customer Care" },
-          { name: "Microsoft Word", level: "Tingkat Lanjut", badge: "Dokumentasi" },
-          { name: "Microsoft PowerPoint", level: "Tingkat Lanjut", badge: "Presentasi" },
-          { name: "Google Docs & Drive", level: "Tingkat Lanjut", badge: "Kolaborasi" },
-          { name: "Google Forms", level: "Mahir", badge: "Survei & Data" },
-          { name: "Canva Design", level: "Menengah / Kreatif", badge: "Visual Media" },
-          { name: "Google Meet & Zoom", level: "Mahir", badge: "Koordinasi Online" }
+          { name: "Microsoft Word & PPT", level: "Lanjut", badge: "Dokumentasi" },
+          { name: "Google Docs & Drive", level: "Lanjut", badge: "Kolaborasi" },
+          { name: "Google Forms", level: "Mahir", badge: "Data" },
+          { name: "Canva Design", level: "Menengah", badge: "Media" },
+          { name: "Google Meet & Zoom", level: "Mahir", badge: "Koordinasi" }
         ]
       },
       {
         id: "soft-skills",
-        title: { id: "Karakter Kerja & Keterampilan Interpersonal", en: "Interpersonal & Work Ethic" },
+        title: { id: "Karakter Kerja", en: "Core Strengths" },
         items: [
-          { name: { id: "Adaptabilitas Cepat", en: "High Adaptability" }, desc: { id: "Cepat menyesuaikan diri dengan lingkungan baru (pemerintahan, toko retail, kedai F&B).", en: "Swift adjustment across government, retail e-commerce, and busy F&B environments." } },
-          { name: { id: "Kerja Sama Tim", en: "Team Collaboration" }, desc: { id: "Berkomunikasi harmonis dan saling mendukung pencapaian target shift.", en: "Supportive cross-functional communication to achieve shift milestones." } },
-          { name: { id: "Manajemen Waktu & Disiplin", en: "Time Management & Discipline" }, desc: { id: "Terbiasa membagi prioritas kerja, tertib jadwal, dan tepat waktu dalam pelaporan.", en: "Structured priority setting, punctual attendance, and timely reporting." } },
-          { name: { id: "Ketelitian Tinggi (Detail-Oriented)", en: "Meticulous Attention to Detail" }, desc: { id: "Teliti dalam verifikasi data korban bencana, update stok produk, dan kas harian.", en: "Rigorous accuracy in disaster data checks, stock counts, and daily cash logs." } },
-          { name: { id: "Problem Solving Praktis", en: "Practical Problem Solving" }, desc: { id: "Tanggap menangani komplain pembeli dan kendala operasional dengan kepala dingin.", en: "Calm, constructive resolution of customer disputes and operational hurdles." } },
-          { name: { id: "Komunikasi Efektif & Empati", en: "Empathetic Communication" }, desc: { id: "Gaya bertutur ramah dan persuasif yang didasari latar belakang pengembangan masyarakat.", en: "Warm, respectful, and articulate manner rooted in community development training." } }
+          { name: { id: "Adaptabilitas Cepat", en: "Fast Adaptability" }, badge: { id: "Lintas Industri", en: "Cross-Industry" } },
+          { name: { id: "Ketelitian Tinggi", en: "Meticulous Detail" }, badge: { id: "Audit & Stok", en: "Audit & Stock" } },
+          { name: { id: "Komunikasi & Empati", en: "Empathetic Dialogue" }, badge: { id: "Customer Care", en: "Customer Care" } },
+          { name: { id: "Manajemen Waktu", en: "Time Management" }, badge: { id: "Disiplin Shift", en: "Shift Discipline" } },
+          { name: { id: "Kerja Sama Tim", en: "Team Collaboration" }, badge: { id: "Kolaboratif", en: "Collaborative" } },
+          { name: { id: "Problem Solving", en: "Problem Solving" }, badge: { id: "Cepat Tanggap", en: "Responsive" } }
         ]
       },
       {
         id: "operational-domains",
-        title: { id: "Domain Operasional Lapangan", en: "Operational Domains" },
+        title: { id: "Domain Operasional", en: "Operational Domains" },
         items: [
           { name: { id: "Laporan Penjualan Harian", en: "Daily Sales Reporting" }, icon: "📊" },
-          { name: { id: "Stock Opname & Kontrol Wastage", en: "Stock Opname & Wastage Control" }, icon: "📦" },
-          { name: { id: "Administrasi Persuratan Resmi", en: "Official Correspondence Archiving" }, icon: "📂" },
-          { name: { id: "Layanan Pelanggan Multi-Kanal", en: "Multi-Channel Customer Service" }, icon: "💬" },
-          { name: { id: "Pendataan Bencana & Bantuan Sosial", en: "Disaster Data & Social Aid Logistics" }, icon: "🤝" }
+          { name: { id: "Stock Opname & Kontrol Wastage", en: "Stock Opname & Waste Control" }, icon: "📦" },
+          { name: { id: "Administrasi Persuratan Resmi", en: "Official Correspondence" }, icon: "📂" },
+          { name: { id: "Layanan Pelanggan Multi-Kanal", en: "Multi-Channel Customer Care" }, icon: "💬" },
+          { name: { id: "Validasi Data & Logistik Bantuan", en: "Data Auditing & Relief Logistics" }, icon: "🤝" }
         ]
       }
     ]
@@ -288,86 +277,77 @@ export const portfolioData = {
     {
       id: "marketplace-ops",
       title: {
-        id: "Optimalisasi Penanganan Chat & Rekonsiliasi Pesanan Marketplace (Batavia Uniform)",
-        en: "Marketplace Chat SLA & Order Fulfillment Workflow (Batavia Uniform)"
+        id: "SOP Pelayanan & Alur Pesanan Multi-Kanal (Batavia Uniform)",
+        en: "Multi-Channel Order & Support Workflow (Batavia Uniform)"
       },
       context: {
-        id: "Mengelola toko online di Shopee, TikTok Shop, dan WhatsApp dengan ratusan interaksi pelanggan seragam setiap minggu.",
-        en: "Operating uniform e-commerce storefronts across Shopee, TikTok Shop, and WhatsApp handling heavy weekly customer inquiries."
+        id: "Mengelola toko online seragam di Shopee, TikTok Shop, dan WhatsApp dengan volume chat harian tinggi.",
+        en: "Managing uniform online store on Shopee, TikTok Shop, and WhatsApp with high daily inquiries."
       },
       actions: {
         id: [
-          "Menyusun template jawaban cepat (quick replies) yang informatif untuk pertanyaan umum seputar ukuran, bahan kain, dan estimasi kirim tanpa terkesan seperti bot otomatis.",
-          "Membuat checklist harian mulai dari verifikasi pesanan baru, cetak resi, pengecekan fisik seragam, hingga penyerahan ke kurir ekspedisi.",
-          "Menerapkan sistem follow-up ramah untuk pelanggan yang berkonsultasi namun belum menyelesaikan pembayaran.",
-          "Mencatat setiap komplain terkait ukuran secara detail untuk mempermudah proses retur dan meminimalkan ulasan negatif bintang 1-2."
+          "Membuat panduan quick-reply informatif seputar ukuran, bahan kain, dan estimasi kirim.",
+          "Menjalankan alur terstruktur: verifikasi pesanan, QC fisik seragam, cetak resi, hingga serah terima kurir."
         ],
         en: [
-          "Developed informative quick-reply templates for sizing, fabric specs, and shipping timelines that maintained a warm, human tone.",
-          "Created an end-to-end daily checklist covering incoming order verification, waybill printing, garment QC, and courier handovers.",
-          "Implemented gentle follow-up reminders for shoppers who initiated sizing queries but paused before checkout.",
-          "Maintained a structured returns log to expedite exchanges and successfully prevent 1-2 star negative ratings."
+          "Developed clear quick replies for sizing, fabric specs, and shipping timelines.",
+          "Implemented a structured checklist: order verification, physical QC, waybill printing, and courier handover."
         ]
       },
       outcome: {
-        id: "Respon chat terjaga cepat dan konsisten, ulasan kepuasan pembeli stabil pada rating tinggi, serta laporan harian selalu terekonsiliasi rapi setiap sore.",
-        en: "Chat SLA remained consistently high, store rating stayed in the top tier, and daily sales were reconciled accurately before end of business."
+        id: "SLA respon chat terjaga cepat, komplain retur minim, dan rating toko stabil bintang 5.",
+        en: "Chat SLA remained fast, return disputes were minimized, and store ratings stayed 5-star."
       }
     },
     {
       id: "kemensos-data",
       title: {
-        id: "Verifikasi Data Korban Bencana & Distribusi Surat Ditjen PSKBA (Kemensos RI)",
-        en: "Disaster Victim Data Auditing & Directorate Dispatch (Ministry of Social Affairs)"
+        id: "Verifikasi Data Korban Bencana & Distribusi Surat (Kemensos RI)",
+        en: "Disaster Victim Data Verification & Archiving (Kemensos RI)"
       },
       context: {
-        id: "Mendukung percepatan arus informasi situasi bencana alam nasional di Ditjen Perlindungan Sosial Korban Bencana Alam.",
-        en: "Assisting national disaster response information flow at the Directorate General of Social Protection for Natural Disaster Victims."
+        id: "Mendukung percepatan arus data situasi bencana alam nasional di Ditjen PSKBA Kemensos RI.",
+        en: "Supporting national disaster casualty data verification at Ditjen PSKBA Kemensos RI."
       },
       actions: {
         id: [
-          "Melakukan cross-check data korban bencana alam dari dinas sosial daerah untuk memisahkan data duplikat dan memverifikasi kebutuhan tenda/sembako.",
-          "Mengarsipkan seluruh surat permohonan bantuan darurat dari pemerintah daerah dan menyalurkannya ke meja Direktur terkait sesuai tingkat kedaruratan.",
-          "Menjaga kerahasiaan dan integritas data masyarakat terdampak bencana selama proses verifikasi."
+          "Cross-check data korban bencana dari dinas sosial daerah untuk eliminasi duplikasi data logistik.",
+          "Mencatat registrasi dan mendisposisikan surat permohonan bantuan darurat ke meja Direktur terkait."
         ],
         en: [
-          "Cross-referenced regional casualty and displacement logs to identify duplicate entries and quantify emergency relief needs.",
-          "Categorized emergency assistance petitions from regional governments, indexing them for rapid dispatch to the appropriate Directors.",
-          "Maintained strict data integrity and confidentiality throughout crisis verification cycles."
+          "Cross-checked regional disaster logs to eliminate duplicates and quantify emergency relief needs.",
+          "Registered, indexed, and dispatched emergency assistance correspondence to relevant Directors."
         ]
       },
       outcome: {
-        id: "Data situasi bencana tercatat rapi dan dapat diakses cepat oleh pimpinan untuk menentukan keputusan distribusi logistik bantuan.",
-        en: "Crisis situational reports were cleanly indexed and readily accessible for leadership to approve logistics mobilizations."
+        id: "Data situasi bencana tercatat rapi dan siap diakses pimpinan untuk penyaluran bantuan.",
+        en: "Situational data was cleanly indexed and readily accessible for emergency aid distribution."
       }
     },
     {
       id: "cafe-inventory",
       title: {
-        id: "Ketertiban Stock Opname & Manajemen Higienitas Bar (Loopline Coffee)",
-        en: "Stock Opname Discipline & Bar Hygiene Standards (Loopline Coffee)"
+        id: "Stock Opname & Disiplin Bar (Loopline Coffee)",
+        en: "Stock Opname & Bar Hygiene Discipline (Loopline Coffee)"
       },
       context: {
         id: "Menjaga stabilitas margin dan kebersihan kedai kopi dengan perputaran bahan baku harian yang cepat.",
-        en: "Safeguarding inventory margins and sanitation compliance in a high-turnover specialty coffee shop."
+        en: "Safeguarding inventory margins and sanitation compliance in a high-turnover coffee shop."
       },
       actions: {
         id: [
-          "Melakukan penghitungan fisik biji kopi (beans), susu fresh milk, dan sirup per shift dan mencocokkannya dengan data penjualan di sistem POS.",
-          "Menerapkan prinsip FIFO (First In, First Out) pada penyimpanan susu dan bahan mudah rusak.",
-          "Menjalankan prosedur deep cleaning mesin espresso dan grinder secara berkala untuk menjaga rasa seduhan tetap prima."
+          "Menghitung fisik biji kopi, susu, dan sirup per shift serta mencocokkannya dengan laporan kasir POS.",
+          "Menerapkan prinsip rotasi FIFO pada bahan baku dan pembersihan mesin espresso secara berkala."
         ],
         en: [
-          "Conducted physical shift audits of roasted coffee beans, dairy stock, and syrups, cross-checking counts against POS totals.",
-          "Enforced FIFO (First In, First Out) rules for milk cartons and perishables to prevent product spoilage.",
-          "Conducted routine chemical deep cleaning of the commercial espresso group heads and grinder burrs to prevent flavor drift."
+          "Audited physical stock of coffee beans, milk, and syrups per shift against POS sales logs.",
+          "Enforced FIFO stock rotation and conducted routine cleaning of espresso equipment."
         ]
       },
       outcome: {
-        id: "Tingkat selisih inventaris berhasil ditekan mendekati nol dan standar sanitasi bar selalu lolos inspeksi kebersihan.",
-        en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed store audit checks."
+        id: "Selisih inventaris ditekan mendekati nol dan standar kebersihan bar selalu lolos audit.",
+        en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed audit checks."
       }
     }
   ]
 };
-
