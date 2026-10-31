@@ -250,20 +250,8 @@ a {
   color: var(--text-main);
 }
 
-@media (max-width: 900px) {
-  .desktop-nav {
-    display: none;
-  }
-  .desktop-only-btn {
-    display: none !important;
-  }
-  .mobile-menu-toggle {
-    display: inline-flex !important;
-  }
-}
-
 .mobile-menu-toggle {
-  display: none;
+  display: none !important;
   width: 2.35rem;
   height: 2.35rem;
   padding: 0;
@@ -278,6 +266,18 @@ a {
 .mobile-menu-toggle:hover {
   border-color: var(--primary);
   color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .desktop-only-btn {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
 }
 
 .header-actions {
