@@ -228,7 +228,7 @@ function renderStats(lang) {
     .map(
       (s) => `
     <div class="metric-item">
-      <div class="metric-number">${s.value}</div>
+      <div class="metric-number" data-stat-val="${s.value}">${s.value}</div>
       <div class="metric-label">${s.label[lang]}</div>
       <div class="metric-sub">${s.sub[lang]}</div>
     </div>
@@ -237,6 +237,112 @@ function renderStats(lang) {
     .join("");
 
   container.innerHTML = html;
+}
+
+function animateCounters() {
+  const numberEls = document.querySelectorAll(".metric-number");
+  if (!numberEls.length) return;
+
+  numberEls.forEach((el) => {
+    const rawVal = el.getAttribute("data-stat-val") || el.textContent.trim();
+
+    // 1. Rating e.g. "4.9★"
+    if (rawVal.includes("★") || rawVal.includes("4.9")) {
+      const target = 4.9;
+      const duration = 850;
+      const startTime = performance.now();
+      function tickRating(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = (ease * target).toFixed(1);
+        el.textContent = `${current}★`;
+        if (progress < 1) requestAnimationFrame(tickRating);
+      }
+      requestAnimationFrame(tickRating);
+    }
+    // 2. Chat speed e.g. "< 15 Mnt"
+    else if (rawVal.includes("15")) {
+      const target = 15;
+      const duration = 800;
+      const startTime = performance.now();
+      const hasMnt = rawVal.toLowerCase().includes("mnt");
+      const suffix = hasMnt ? " Mnt" : " Min";
+      function tickChat(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(ease * target);
+        el.textContent = `< ${current}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tickChat);
+      }
+      requestAnimationFrame(tickChat);
+    }
+    // 3. Stock discrepancy e.g. "0%"
+    else if (rawVal.includes("%")) {
+      el.textContent = "0%";
+      el.style.transform = "scale(1.2)";
+      el.style.transition = "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+      setTimeout(() => {
+        el.style.transform = "scale(1)";
+      }, 350);
+    }
+    // 4. GPA e.g. "3.64"
+    else if (rawVal.includes("3.64") || !isNaN(parseFloat(rawVal))) {
+      const target = 3.64;
+      const duration = 900;
+      const startTime = performance.now();
+      function tickGpa(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = (ease * target).toFixed(2);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(tickGpa);
+      }
+      requestAnimationFrame(tickGpa);
+    }
+  });
+}
+
+function setupIntroAnimation() {
+  const curtain = document.getElementById("intro-curtain");
+  const bar = document.getElementById("intro-bar");
+
+  // Reduced motion check
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (curtain) curtain.style.display = "none";
+    document.body.classList.add("site-loaded");
+    return;
+  }
+
+  if (!curtain) {
+    document.body.classList.add("site-loaded");
+    return;
+  }
+
+  // Interactive instant dismiss on click or touch
+  let dismissed = false;
+  const dismissCurtain = () => {
+    if (dismissed) return;
+    dismissed = true;
+    curtain.classList.add("lift");
+    document.body.classList.add("site-loaded");
+    setTimeout(() => {
+      curtain.style.display = "none";
+      animateCounters();
+    }, 650);
+  };
+
+  curtain.addEventListener("click", dismissCurtain);
+
+  // Fill the progress bar line
+  requestAnimationFrame(() => {
+    if (bar) bar.classList.add("filled");
+  });
+
+  // Fast & snappy automatic lift (480ms)
+  setTimeout(dismissCurtain, 480);
 }
 
 function renderCaseStudies(lang) {
@@ -790,4 +896,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5. Scroll Animations
   setupScrollReveal();
+
+  // 6. Intro Curtain & Opening Motion
+  setupIntroAnimation();
 });

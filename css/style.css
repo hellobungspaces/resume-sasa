@@ -186,6 +186,190 @@ a {
   }
 }
 
+/* ==========================================================================
+   Editorial Entrance Curtain & Opening Motion
+   ========================================================================== */
+.intro-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease 0.3s;
+  will-change: transform;
+  animation: autoLiftCurtain 0.65s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+}
+
+@keyframes autoLiftCurtain {
+  to {
+    transform: translateY(-100%);
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.intro-curtain.lift {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.intro-curtain-inner {
+  text-align: center;
+  padding: 2rem;
+  max-width: 520px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.intro-title {
+  font-size: clamp(1.8rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.intro-sub {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: #A1A1AA;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+}
+
+.intro-track {
+  width: 160px;
+  height: 2px;
+  background-color: #27272A;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.intro-bar {
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  box-shadow: 0 0 10px rgba(255, 90, 38, 0.7);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-bar.filled {
+  width: 100%;
+}
+
+/* Hero Entrance Choreography (triggered on site-loaded) */
+body.site-loaded .site-header {
+  animation: heroHeaderSlide 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .hero-status-badge {
+  animation: heroFadeUp 0.6s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .hero-huge-title {
+  animation: heroFadeUp 0.65s 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .hero-power-hook {
+  animation: heroFadeUp 0.65s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .hero-manifesto {
+  animation: heroFadeUp 0.65s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .editorial-portrait-frame {
+  animation: heroPortraitZoom 0.75s 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+body.site-loaded .hero-stamp-badge {
+  animation: heroStampPop 0.75s 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+body.site-loaded .hero-metrics-wrap {
+  animation: heroFadeUp 0.65s 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroHeaderSlide {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPortraitZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroStampPop {
+  from {
+    opacity: 0;
+    transform: scale(0.65) rotate(-18deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-curtain {
+    display: none !important;
+  }
+  body.site-loaded .site-header,
+  body.site-loaded .hero-status-badge,
+  body.site-loaded .hero-huge-title,
+  body.site-loaded .hero-power-hook,
+  body.site-loaded .hero-manifesto,
+  body.site-loaded .editorial-portrait-frame,
+  body.site-loaded .hero-stamp-badge,
+  body.site-loaded .hero-metrics-wrap {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* --------------------------------------------------------------------------
    4. Floating Island Navbar
    -------------------------------------------------------------------------- */
@@ -698,7 +882,7 @@ a {
   margin: 1.75rem 0 1.5rem 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-cta-group {
     display: none !important;
   }
