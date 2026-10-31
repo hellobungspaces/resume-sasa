@@ -1181,19 +1181,54 @@ body.site-loaded .hero-metrics-wrap {
 .section-title-wrap {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 2.75rem;
 }
 
-.section-number {
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--primary);
-  border: 1px solid var(--border);
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-xs);
+.section-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
   background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.section-container:hover .section-badge-icon {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  background-color: var(--primary-subtle);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.section-number {
+  display: none;
 }
 
 .section-heading {
@@ -2565,10 +2600,9 @@ body.site-loaded .hero-metrics-wrap {
     border-bottom: 1px solid #CCC !important;
   }
 
-  .section-number {
-    border: none !important;
-    padding: 0 !important;
-    color: #000 !important;
+  .section-number,
+  .section-badge-icon {
+    display: none !important;
   }
 
   .section-heading {

@@ -61,6 +61,12 @@ const uiTranslations = {
   },
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
+  verifiedProfile: { id: "Profil Terverifikasi", en: "Verified Profile" },
+  eyebrowCases: { id: "PORTFOLIO & KASUS", en: "PORTFOLIO & CASE STUDIES" },
+  eyebrowExp: { id: "RIWAYAT KARIER", en: "CAREER TIMELINE" },
+  eyebrowEdu: { id: "LATAR BELAKANG AKADEMIK", en: "ACADEMIC BACKGROUND" },
+  eyebrowSkills: { id: "KOMPETENSI & TOOLSET", en: "CORE COMPETENCIES & TOOLS" },
+  eyebrowFaq: { id: "TANYA JAWAB REKRUTER", en: "RECRUITER SCREENING Q&A" },
   trustLabel: {
     id: "EKOSISTEM & PLATFORM PENGALAMAN:",
     en: "EXPERIENCE ECOSYSTEM & PLATFORMS:"
