@@ -1274,8 +1274,17 @@ a {
   border-radius: var(--radius-sm);
 }
 
-.sop-icon {
-  font-size: 1.4rem;
+.sop-icon,
+.sop-icon-vector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sop-card:hover .sop-icon-vector {
+  transform: scale(1.15);
 }
 
 .sop-tag {
@@ -1691,17 +1700,58 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.55rem 0.75rem;
+  padding: 0.65rem 0.85rem;
   border-radius: var(--radius-sm);
   background-color: var(--bg-subtle);
   border: 1px solid var(--border);
   margin-bottom: 0.5rem;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-item-row:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-surface);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill-icon-vector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-item-row:hover .skill-icon-vector {
+  transform: scale(1.15);
 }
 
 .skill-name {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-main);
+  line-height: 1.3;
+}
+
+/* Smooth Scroll Reveal (Luxury Editorial Motion) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --------------------------------------------------------------------------

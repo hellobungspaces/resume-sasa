@@ -237,37 +237,38 @@ export const portfolioData = {
         id: "hard-skills",
         title: { id: "Aplikasi & Alat Kerja", en: "Digital Tools & Systems" },
         items: [
-          { name: "Shopee Seller Centre", level: "Mahir", badge: "Marketplace" },
-          { name: "TikTok Shop Seller Center", level: "Mahir", badge: "Marketplace" },
-          { name: "WhatsApp Business CRM", level: "Mahir", badge: "Customer Care" },
-          { name: "Microsoft Word & PPT", level: "Lanjut", badge: "Dokumentasi" },
-          { name: "Google Docs & Drive", level: "Lanjut", badge: "Kolaborasi" },
-          { name: "Google Forms", level: "Mahir", badge: "Data" },
-          { name: "Canva Design", level: "Menengah", badge: "Media" },
-          { name: "Google Meet & Zoom", level: "Mahir", badge: "Koordinasi" }
+          { name: "Shopee Seller Centre", level: "Mahir", badge: "Marketplace", iconKey: "shopee" },
+          { name: "TikTok Shop Seller Center", level: "Mahir", badge: "Marketplace", iconKey: "tiktok" },
+          { name: "WhatsApp Business CRM", level: "Mahir", badge: "Customer Care", iconKey: "whatsapp" },
+          { name: "Microsoft Excel & Google Sheets", level: "Mahir", badge: "Spreadsheet", iconKey: "excel" },
+          { name: "Sistem Kasir POS & Barcode", level: "Mahir", badge: "POS Retail", iconKey: "pos" },
+          { name: "Microsoft Word & Dokumen", level: "Lanjut", badge: "Dokumentasi", iconKey: "docs" },
+          { name: "Google Drive & Workspace", level: "Lanjut", badge: "Kolaborasi", iconKey: "drive" },
+          { name: "Google Forms", level: "Mahir", badge: "Data Survey", iconKey: "forms" },
+          { name: "Canva Design", level: "Menengah", badge: "Visual Media", iconKey: "canva" }
         ]
       },
       {
         id: "soft-skills",
         title: { id: "Karakter Kerja", en: "Core Strengths" },
         items: [
-          { name: { id: "Adaptabilitas Cepat", en: "Fast Adaptability" }, badge: { id: "Lintas Industri", en: "Cross-Industry" } },
-          { name: { id: "Ketelitian Tinggi", en: "Meticulous Detail" }, badge: { id: "Audit & Stok", en: "Audit & Stock" } },
-          { name: { id: "Komunikasi & Empati", en: "Empathetic Dialogue" }, badge: { id: "Customer Care", en: "Customer Care" } },
-          { name: { id: "Manajemen Waktu", en: "Time Management" }, badge: { id: "Disiplin Shift", en: "Shift Discipline" } },
-          { name: { id: "Kerja Sama Tim", en: "Team Collaboration" }, badge: { id: "Kolaboratif", en: "Collaborative" } },
-          { name: { id: "Problem Solving", en: "Problem Solving" }, badge: { id: "Cepat Tanggap", en: "Responsive" } }
+          { name: { id: "Adaptabilitas Cepat", en: "Fast Adaptability" }, badge: { id: "Lintas Industri", en: "Cross-Industry" }, iconKey: "adaptability" },
+          { name: { id: "Ketelitian Tinggi", en: "Meticulous Detail" }, badge: { id: "Audit & Stok", en: "Audit & Stock" }, iconKey: "precision" },
+          { name: { id: "Komunikasi & Empati", en: "Empathetic Dialogue" }, badge: { id: "Customer Care", en: "Customer Care" }, iconKey: "communication" },
+          { name: { id: "Manajemen Waktu", en: "Time Management" }, badge: { id: "Disiplin Shift", en: "Shift Discipline" }, iconKey: "timeManagement" },
+          { name: { id: "Kerja Sama Tim", en: "Team Collaboration" }, badge: { id: "Kolaboratif", en: "Collaborative" }, iconKey: "teamwork" },
+          { name: { id: "Problem Solving", en: "Problem Solving" }, badge: { id: "Cepat Tanggap", en: "Responsive" }, iconKey: "problemSolving" }
         ]
       },
       {
         id: "operational-domains",
         title: { id: "Domain Operasional", en: "Operational Domains" },
         items: [
-          { name: { id: "Laporan Penjualan Harian", en: "Daily Sales Reporting" }, icon: "📊" },
-          { name: { id: "Stock Opname & Kontrol Wastage", en: "Stock Opname & Waste Control" }, icon: "📦" },
-          { name: { id: "Administrasi Persuratan Resmi", en: "Official Correspondence" }, icon: "📂" },
-          { name: { id: "Layanan Pelanggan Multi-Kanal", en: "Multi-Channel Customer Care" }, icon: "💬" },
-          { name: { id: "Validasi Data & Logistik Bantuan", en: "Data Auditing & Relief Logistics" }, icon: "🤝" }
+          { name: { id: "Laporan Penjualan Harian", en: "Daily Sales Reporting" }, iconKey: "salesReport" },
+          { name: { id: "Stock Opname & Kontrol Wastage", en: "Stock Opname & Waste Control" }, iconKey: "stockOpname" },
+          { name: { id: "Administrasi Persuratan Resmi", en: "Official Correspondence" }, iconKey: "correspondence" },
+          { name: { id: "Layanan Pelanggan Multi-Kanal", en: "Multi-Channel Customer Care" }, iconKey: "customerCare" },
+          { name: { id: "Validasi Data & Logistik Bantuan", en: "Data Auditing & Relief Logistics" }, iconKey: "dataAuditing" }
         ]
       }
     ]
@@ -362,7 +363,7 @@ export const portfolioData = {
   sopPipeline: [
     {
       step: "01",
-      icon: "📥",
+      iconKey: "orderIntake",
       title: {
         id: "Verifikasi & Alur Masuk Pesanan",
         en: "Order Ingestion & Verification"
@@ -382,7 +383,7 @@ export const portfolioData = {
     },
     {
       step: "02",
-      icon: "💬",
+      iconKey: "chatSpeed",
       title: {
         id: "Respon Chat & Panduan Ukuran",
         en: "Fast Chat Response & Sizing"
@@ -402,7 +403,7 @@ export const portfolioData = {
     },
     {
       step: "03",
-      icon: "📦",
+      iconKey: "fulfillment",
       title: {
         id: "QC Fisik & Serah Terima Kurir",
         en: "Garment QC & Courier Dispatch"
@@ -422,7 +423,7 @@ export const portfolioData = {
     },
     {
       step: "04",
-      icon: "⭐",
+      iconKey: "ratingCare",
       title: {
         id: "After-Sales & Proteksi Rating",
         en: "After-Sales & Rating Care"
