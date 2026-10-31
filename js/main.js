@@ -15,11 +15,11 @@ const uiTranslations = {
   statusText: { id: "TERSEDIA UNTUK KERJA", en: "AVAILABLE FOR HIRE" },
   workPref: {
     id: "JAKARTA (WFO / HYBRID) · SIAP SEGERA",
-    en: "JAKARTA (WFO / HYBRID) · IMMEDIATE JOIN"
+    en: "JAKARTA (WFO / HYBRID) · AVAILABLE IMMEDIATELY"
   },
   heroHook: {
     id: "Operasional toko online yang rapi, SLA respon cepat, dan kontrol stok zero-shrinkage.",
-    en: "Turning e-commerce storefronts into high-speed, zero-shrinkage operations."
+    en: "Clean storefront operations, fast chat SLA, and zero-shrinkage inventory control."
   },
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
@@ -209,7 +209,7 @@ function renderCaseStudies(lang) {
           </div>
 
           <div class="work-block">
-            <div class="work-block-label">${lang === "id" ? "Langkah Eksekusi Nyata" : "Field Execution Actions"}</div>
+            <div class="work-block-label">${lang === "id" ? "Langkah Eksekusi Nyata" : "Key Actions Taken"}</div>
             <ul>
               ${cs.actions[lang].map((act) => `<li>${act}</li>`).join("")}
             </ul>
@@ -312,7 +312,7 @@ function renderEducation(lang) {
           </div>
         </div>
         <div class="gpa-pill">
-          <span>IPK: ${education.gpa}</span>
+          <span>${lang === "id" ? "IPK" : "GPA"}: ${education.gpa}</span>
           <span>&bull; ${education.honors[lang]}</span>
         </div>
       </div>
@@ -369,7 +369,7 @@ function renderSkills(lang) {
               <span style="font-size: 1.15rem;">${item.icon}</span>
               <span class="skill-name">${item.name[lang]}</span>
             </div>
-            <span class="tag-badge">Aktif</span>
+            <span class="tag-badge">${lang === "id" ? "Aktif" : "Active"}</span>
           </div>
         `
           )

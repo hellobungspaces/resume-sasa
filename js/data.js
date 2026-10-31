@@ -91,7 +91,7 @@ export const portfolioData = {
         ],
         en: [
           "Processed daily incoming orders, updated inventory, and synced catalogs on Shopee & TikTok Shop.",
-          "Handled sizing consultations and return logistics via WhatsApp with high SLA and friendly service.",
+          "Handled customer sizing inquiries and return requests via WhatsApp with fast, friendly service.",
           "Reconciled daily sales logs to track top-selling uniforms and plan stock reorders."
         ]
       }
@@ -125,7 +125,7 @@ export const portfolioData = {
         ],
         en: [
           "Operated POS register and audited physical stock per shift (coffee beans, fresh milk, syrups).",
-          "Prepared 50+ espresso beverages daily upholding consistent flavor profiles and fast service.",
+          "Prepared 50+ beverages daily while maintaining consistent quality and fast service.",
           "Enforced FIFO rotation on perishables and maintained strict hygiene across the bar station."
         ]
       }
@@ -149,7 +149,7 @@ export const portfolioData = {
       tags: ["Data Verification", "Kemensos RI", "Surat Dinas", "Sistem Informasi"],
       summary: {
         id: "Verifikasi data korban bencana alam dan tata kelola persuratan dinas di Ditjen PSKBA.",
-        en: "Audited national disaster victim logs and processed official correspondence at Ditjen PSKBA."
+        en: "Audited disaster casualty records and processed official correspondence at Ditjen PSKBA."
       },
       bullets: {
         id: [
@@ -159,8 +159,8 @@ export const portfolioData = {
         ],
         en: [
           "Audited and classified regional casualty/displacement records to verify relief allocations.",
-          "Registered, categorized, and dispatched incoming ministerial correspondence to Directors.",
-          "Maintained data fidelity and confidentiality under emergency disaster response workflows."
+          "Registered, categorized, and forwarded incoming official correspondence to related Directors.",
+          "Maintained data accuracy and strict confidentiality during emergency response workflows."
         ]
       }
     },
@@ -321,7 +321,7 @@ export const portfolioData = {
         ],
         en: [
           "Cross-checked regional disaster casualty datasets to eliminate duplicates and estimate relief supplies.",
-          "Registered, categorized, and dispatched emergency aid petitions from regional governments to relevant Directors.",
+          "Registered, categorized, and forwarded emergency aid requests from regional governments to relevant Directors.",
           "Upheld strict confidentiality and integrity of affected population data throughout verification."
         ]
       },
@@ -334,7 +334,7 @@ export const portfolioData = {
       id: "cafe-inventory",
       title: {
         id: "Stock Opname & Disiplin Bar (Loopline Coffee)",
-        en: "Stock Opname & Bar Hygiene Discipline (Loopline Coffee)"
+        en: "Inventory Audit (Stock Opname) & Shift Discipline (Loopline Coffee)"
       },
       context: {
         id: "Menjaga stabilitas margin dan kebersihan kedai kopi dengan perputaran bahan baku harian yang cepat.",
