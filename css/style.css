@@ -699,14 +699,9 @@ a {
   margin: 1.75rem 0 1.5rem 0;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-cta-group {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-  .hero-cta-group .btn {
-    width: 100%;
+    display: none !important;
   }
 }
 
