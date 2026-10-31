@@ -39,24 +39,24 @@ export const portfolioData = {
     },
     stats: [
       {
+        value: "4.9★",
+        label: { id: "Rating Toko Terjaga", en: "Store Rating Maintained" },
+        sub: { id: "Ulasan Bintang 5 Batavia Uniform", en: "5-Star Store Reviews" }
+      },
+      {
+        value: "< 15 Mnt",
+        label: { id: "Kecepatan Respon Chat", en: "Chat Response SLA" },
+        sub: { id: "Konsultasi Ukuran & Retur Cepat", en: "Fast Sizing & Return Support" }
+      },
+      {
+        value: "0%",
+        label: { id: "Selisih Stock Opname", en: "Zero Stock Shrinkage" },
+        sub: { id: "Kepatuhan Audit Fisik & FIFO", en: "Strict Physical Audit & FIFO" }
+      },
+      {
         value: "3.64",
-        label: { id: "IPK / 4.00 (Cum Laude)", en: "GPA / 4.00 (Distinction)" },
+        label: { id: "IPK / 4.00 (Cum Laude)", en: "GPA / 4.00 (Cum Laude)" },
         sub: { id: "UIN Syarif Hidayatullah", en: "UIN Syarif Hidayatullah" }
-      },
-      {
-        value: "3+",
-        label: { id: "Kanal Marketplace", en: "Active Channels" },
-        sub: { id: "Shopee, TikTok Shop, WhatsApp", en: "Shopee, TikTok Shop, WhatsApp" }
-      },
-      {
-        value: "100%",
-        label: { id: "Ketertiban Stock Opname", en: "Inventory Compliance" },
-        sub: { id: "Loopline & Batavia Uniform", en: "Loopline & Batavia Uniform" }
-      },
-      {
-        value: "4+",
-        label: { id: "Bulan di Kemensos RI", en: "Months at Kemensos RI" },
-        sub: { id: "Ditjen PSKBA", en: "Disaster Protection Dept." }
       }
     ]
   },
@@ -281,22 +281,26 @@ export const portfolioData = {
         en: "Multi-Channel Order & Support Workflow (Batavia Uniform)"
       },
       context: {
-        id: "Mengelola toko online seragam di Shopee, TikTok Shop, dan WhatsApp dengan volume chat harian tinggi.",
-        en: "Managing uniform online store on Shopee, TikTok Shop, and WhatsApp with high daily inquiries."
+        id: "Mengoptimalkan operasional toko seragam di Shopee, TikTok Shop, dan WhatsApp dengan volume chat harian tinggi.",
+        en: "Optimizing uniform storefront operations on Shopee, TikTok Shop, and WhatsApp under high inquiry volumes."
       },
       actions: {
         id: [
-          "Membuat panduan quick-reply informatif seputar ukuran, bahan kain, dan estimasi kirim.",
-          "Menjalankan alur terstruktur: verifikasi pesanan, QC fisik seragam, cetak resi, hingga serah terima kurir."
+          "Menyusun template quick-reply informatif seputar panduan ukuran, spesifikasi bahan kain, dan estimasi waktu kirim.",
+          "Menerapkan alur checklist harian: verifikasi pesanan baru, cetak resi, QC fisik seragam, hingga serah terima kurir ekspedisi.",
+          "Melakukan follow-up ramah dan berkala kepada calon pembeli yang telah berkonsultasi namun belum menyelesaikan pembayaran.",
+          "Mencatat komplain penukaran ukuran secara detail untuk mempercepat proses retur dan mencegah ulasan negatif bintang 1-2."
         ],
         en: [
-          "Developed clear quick replies for sizing, fabric specs, and shipping timelines.",
-          "Implemented a structured checklist: order verification, physical QC, waybill printing, and courier handover."
+          "Developed clear quick replies covering sizing charts, fabric specifications, and shipping estimates.",
+          "Implemented a daily checklist: incoming order verification, waybill printing, garment QC, and courier handovers.",
+          "Conducted friendly follow-ups with shoppers who consulted regarding sizing but had not completed payment.",
+          "Logged sizing exchange complaints methodically to expedite returns and prevent negative 1-2 star reviews."
         ]
       },
       outcome: {
-        id: "SLA respon chat terjaga cepat, komplain retur minim, dan rating toko stabil bintang 5.",
-        en: "Chat SLA remained fast, return disputes were minimized, and store ratings stayed 5-star."
+        id: "SLA respon chat terjaga cepat, komplain retur teratasi dengan baik, dan rating toko stabil bintang 5.",
+        en: "Chat response SLA remained swift, return complaints were resolved smoothly, and store rating held at 5 stars."
       }
     },
     {
@@ -311,17 +315,19 @@ export const portfolioData = {
       },
       actions: {
         id: [
-          "Cross-check data korban bencana dari dinas sosial daerah untuk eliminasi duplikasi data logistik.",
-          "Mencatat registrasi dan mendisposisikan surat permohonan bantuan darurat ke meja Direktur terkait."
+          "Melakukan cross-check data korban bencana alam daerah untuk eliminasi duplikasi dan estimasi kebutuhan logistik.",
+          "Mencatat registrasi agenda dan mendisposisikan surat permohonan bantuan darurat dari pemda ke meja Direktur terkait.",
+          "Menjaga kerahasiaan dan integritas data masyarakat terdampak bencana selama proses verifikasi berlangsung."
         ],
         en: [
-          "Cross-checked regional disaster logs to eliminate duplicates and quantify emergency relief needs.",
-          "Registered, indexed, and dispatched emergency assistance correspondence to relevant Directors."
+          "Cross-checked regional disaster casualty datasets to eliminate duplicates and estimate relief supplies.",
+          "Registered, categorized, and dispatched emergency aid petitions from regional governments to relevant Directors.",
+          "Upheld strict confidentiality and integrity of affected population data throughout verification."
         ]
       },
       outcome: {
-        id: "Data situasi bencana tercatat rapi dan siap diakses pimpinan untuk penyaluran bantuan.",
-        en: "Situational data was cleanly indexed and readily accessible for emergency aid distribution."
+        id: "Data situasi bencana tercatat rapi dan siap diakses pimpinan untuk dasar penyaluran bantuan darurat.",
+        en: "Situational data was cleanly indexed and readily accessible for leadership relief deployments."
       }
     },
     {
@@ -336,17 +342,19 @@ export const portfolioData = {
       },
       actions: {
         id: [
-          "Menghitung fisik biji kopi, susu, dan sirup per shift serta mencocokkannya dengan laporan kasir POS.",
-          "Menerapkan prinsip rotasi FIFO pada bahan baku dan pembersihan mesin espresso secara berkala."
+          "Menghitung fisik biji kopi (beans), susu fresh milk, dan sirup per shift serta mencocokkannya dengan laporan kasir POS.",
+          "Menerapkan prinsip rotasi FIFO (First In, First Out) pada penyimpanan bahan baku dan susu untuk mencegah kedaluwarsa.",
+          "Menjalankan prosedur deep cleaning mesin espresso dan grinder secara berkala untuk menjaga konsistensi rasa seduhan."
         ],
         en: [
-          "Audited physical stock of coffee beans, milk, and syrups per shift against POS sales logs.",
-          "Enforced FIFO stock rotation and conducted routine cleaning of espresso equipment."
+          "Audited physical inventory of coffee beans, fresh milk, and syrups per shift against POS sales logs.",
+          "Enforced FIFO (First In, First Out) storage rotation to prevent dairy and perishable spoilage.",
+          "Conducted scheduled deep cleaning of espresso machines and grinder burrs to maintain flavor consistency."
         ]
       },
       outcome: {
-        id: "Selisih inventaris ditekan mendekati nol dan standar kebersihan bar selalu lolos audit.",
-        en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed audit checks."
+        id: "Tingkat selisih inventaris berhasil ditekan mendekati nol dan standar sanitasi bar selalu lolos audit kebersihan.",
+        en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed audit inspections."
       }
     }
   ]

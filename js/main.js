@@ -13,6 +13,10 @@ const uiTranslations = {
   navContact: { id: "Kontak", en: "Contact" },
   btnBookCall: { id: "Hubungi", en: "Get In Touch" },
   statusText: { id: "TERSEDIA UNTUK KERJA", en: "AVAILABLE FOR HIRE" },
+  workPref: {
+    id: "JAKARTA (WFO / HYBRID) · SIAP SEGERA",
+    en: "JAKARTA (WFO / HYBRID) · IMMEDIATE JOIN"
+  },
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
   trustLabel: {
@@ -187,12 +191,12 @@ function renderCaseStudies(lang) {
 
         <div class="work-body-grid">
           <div class="work-block">
-            <div class="work-block-label">${lang === "id" ? "Tantangan" : "Challenge"}</div>
+            <div class="work-block-label">${lang === "id" ? "Tantangan Operasional" : "Operational Challenge"}</div>
             <p>${cs.context[lang]}</p>
           </div>
 
           <div class="work-block">
-            <div class="work-block-label">${lang === "id" ? "Eksekusi" : "Execution"}</div>
+            <div class="work-block-label">${lang === "id" ? "Langkah Eksekusi Nyata" : "Field Execution Actions"}</div>
             <ul>
               ${cs.actions[lang].map((act) => `<li>${act}</li>`).join("")}
             </ul>
@@ -202,7 +206,7 @@ function renderCaseStudies(lang) {
         <div class="work-outcome-block">
           <span class="outcome-icon">✓</span>
           <div class="outcome-text">
-            <strong>${lang === "id" ? "Hasil:" : "Result:"}</strong> ${cs.outcome[lang]}
+            <strong>${lang === "id" ? "Hasil Terukur:" : "Measurable Result:"}</strong> ${cs.outcome[lang]}
           </div>
         </div>
       </article>
