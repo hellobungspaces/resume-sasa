@@ -16,7 +16,7 @@ export const portfolioData = {
       id: "Spesialis operasional marketplace dan administrasi lulusan UIN Jakarta (IPK 3.64). Berpengalaman mengelola toko multi-kanal di Batavia Uniform, verifikasi data Kemensos RI, dan audit inventaris.",
       en: "Marketplace operations and administration specialist, UIN Jakarta graduate (GPA 3.64). Experienced in multi-channel e-commerce at Batavia Uniform, disaster data at Kemensos RI, and inventory audit."
     },
-    photo: "assets/saida-profile.jpg",
+    photo: "assets/saida-profile.jpg?v=2",
     statusBadge: {
       id: "Tersedia untuk Kerja · Full-Time / Kontrak",
       en: "Available for Hire · Full-Time / Contract"
