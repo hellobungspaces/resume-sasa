@@ -2,7 +2,9 @@ import { portfolioData } from "./data.js";
 
 // Global Application State (Defaulting to dark editorial style as per reference)
 let currentLang = localStorage.getItem("preferred_lang") || "id";
-let currentTheme = localStorage.getItem("preferred_theme") || "dark";
+let storedTheme = localStorage.getItem("preferred_theme");
+if (storedTheme === "warm") storedTheme = "light";
+let currentTheme = storedTheme || "dark";
 
 // Translation Dictionary for Static UI Elements
 const uiTranslations = {
@@ -101,24 +103,29 @@ const uiTranslations = {
 };
 
 /* --------------------------------------------------------------------------
-   1. Theme Management (Editorial Studio Dark vs Warm Gallery Light)
+   1. Theme Management (Editorial Dark vs Crisp Pure White Light)
    -------------------------------------------------------------------------- */
 function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
+  const isLight = theme === "light" || theme === "warm";
+  const activeTheme = isLight ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", activeTheme);
+
   const themeIcon = document.getElementById("theme-icon");
   if (themeIcon) {
-    themeIcon.textContent = theme === "warm" ? "🌙" : "☀️";
+    themeIcon.textContent = isLight ? "🌙" : "☀️";
   }
+
   const themeColorMeta = document.getElementById("theme-color-meta");
   if (themeColorMeta) {
-    themeColorMeta.setAttribute("content", theme === "warm" ? "#F7F5F0" : "#0A0A0A");
+    themeColorMeta.setAttribute("content", isLight ? "#FFFFFF" : "#0D0D0D");
   }
-  localStorage.setItem("preferred_theme", theme);
-  currentTheme = theme;
+
+  localStorage.setItem("preferred_theme", activeTheme);
+  currentTheme = activeTheme;
 }
 
 function toggleTheme() {
-  const nextTheme = currentTheme === "dark" ? "warm" : "dark";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
   applyTheme(nextTheme);
 }
 
