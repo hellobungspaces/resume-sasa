@@ -17,6 +17,10 @@ const uiTranslations = {
     id: "JAKARTA (WFO / HYBRID) · SIAP SEGERA",
     en: "JAKARTA (WFO / HYBRID) · IMMEDIATE JOIN"
   },
+  heroHook: {
+    id: "Operasional toko online yang rapi, SLA respon cepat, dan kontrol stok zero-shrinkage.",
+    en: "Turning e-commerce storefronts into high-speed, zero-shrinkage operations."
+  },
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
   trustLabel: {
@@ -139,11 +143,13 @@ function setLanguage(lang) {
 function renderHero(lang) {
   const { profile } = portfolioData;
   const titleEl = document.getElementById("hero-title");
+  const hookEl = document.getElementById("hero-hook");
   const bioEl = document.getElementById("hero-bio");
   const statusEl = document.getElementById("hero-status-text");
   const footerAddr = document.getElementById("footer-address-text");
 
   if (titleEl) titleEl.textContent = profile.title[lang];
+  if (hookEl && uiTranslations.heroHook) hookEl.textContent = uiTranslations.heroHook[lang];
   if (bioEl) bioEl.textContent = profile.bio[lang];
   if (statusEl) statusEl.textContent = profile.statusBadge[lang];
   if (footerAddr) footerAddr.textContent = profile.contact.address[lang];
