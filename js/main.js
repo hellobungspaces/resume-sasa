@@ -463,6 +463,56 @@ function setupMobileDrawer() {
   });
 }
 
+function setupBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  const circle = document.getElementById("scroll-progress-circle");
+  if (!btn) return;
+
+  const circumference = 125.66; // 2 * Math.PI * 20
+  let ticking = false;
+
+  const updateScroll = () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Smooth visibility toggle
+    if (scrollY > 280) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+
+    // Update progress circle offset
+    if (circle && scrollTotal > 0) {
+      const scrollPercent = Math.min(Math.max(scrollY / scrollTotal, 0), 1);
+      const offset = circumference - scrollPercent * circumference;
+      circle.style.strokeDashoffset = offset.toFixed(2);
+    }
+
+    ticking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  updateScroll();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
 /* --------------------------------------------------------------------------
    6. Application Initialization
    -------------------------------------------------------------------------- */
@@ -484,6 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCopyButtons();
   setupContactModal();
   setupMobileDrawer();
+  setupBackToTop();
 
   // 4. Initial Render
   setLanguage(currentLang);
