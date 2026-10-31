@@ -498,29 +498,21 @@ a {
   }
 }
 
-/* Micro Metadata Ticker */
-.hero-micro-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.micro-status {
+/* Availability Status Pill (Editorial Style) */
+.hero-status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  color: var(--accent-green);
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
 }
 
 .pulse-dot {
@@ -538,7 +530,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  margin: 2rem 0 1.75rem 0;
+  margin: 0.75rem 0 1.75rem 0;
   position: relative;
 }
 
@@ -1682,7 +1674,7 @@ a {
   }
 
   .site-header,
-  .hero-micro-bar,
+  .hero-status-badge,
   .hero-stamp-badge,
   .trust-marquee-section,
   .hero-cta-group,

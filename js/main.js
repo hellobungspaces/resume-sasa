@@ -93,28 +93,6 @@ function toggleTheme() {
   applyTheme(nextTheme);
 }
 
-/* --------------------------------------------------------------------------
-   2. Live Clock Display (Elizabeth Olsen style ticker)
-   -------------------------------------------------------------------------- */
-function startLiveClock() {
-  const display = document.getElementById("live-time-display");
-  if (!display) return;
-
-  function update() {
-    const now = new Date();
-    const timeStr = now.toLocaleTimeString("en-US", {
-      timeZone: "Asia/Jakarta",
-      hour12: true,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
-    display.textContent = `OUR TIME ${timeStr} WIB`;
-  }
-
-  update();
-  setInterval(update, 1000);
-}
 
 /* --------------------------------------------------------------------------
    3. Language Switcher
@@ -506,7 +484,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCopyButtons();
   setupContactModal();
   setupMobileDrawer();
-  startLiveClock();
 
   // 4. Initial Render
   setLanguage(currentLang);
