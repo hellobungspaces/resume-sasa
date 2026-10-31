@@ -1172,6 +1172,163 @@ a {
 }
 
 /* --------------------------------------------------------------------------
+   10b. Interactive SOP Pipeline (Daily Operations Architecture)
+   -------------------------------------------------------------------------- */
+.sop-pipeline-wrap {
+  margin-top: 3.5rem;
+  padding-top: 2.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+.sop-pipeline-header {
+  margin-bottom: 2rem;
+}
+
+.sop-pipeline-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.sop-pipeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.sop-pipeline-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.sop-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .sop-pipeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sop-pipeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.sop-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.sop-card:hover,
+.sop-card.active {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(255, 77, 0, 0.04) 100%);
+}
+
+.sop-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.sop-step-number {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.sop-icon {
+  font-size: 1.4rem;
+}
+
+.sop-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.sop-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.sop-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.sop-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  align-self: flex-start;
+  transition: all 0.2s ease;
+}
+
+.sop-card.active .sop-metric-pill {
+  background: var(--primary-subtle);
+  border-color: var(--primary-border);
+  color: var(--primary);
+}
+
+.sop-metric-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
    11. Career Timeline & Dossier Ledger ("02 / Experience")
    -------------------------------------------------------------------------- */
 .experience-ledger {
@@ -1537,6 +1694,118 @@ a {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   13b. Recruiter FAQ & Screening Accordion
+   -------------------------------------------------------------------------- */
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.faq-item.open {
+  background: var(--bg-surface);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-main);
+  gap: 1rem;
+  transition: color 0.15s ease;
+}
+
+.faq-trigger:hover {
+  color: var(--primary);
+}
+
+.faq-q-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.faq-q-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.faq-q-text {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .faq-q-text {
+    font-size: 0.98rem;
+  }
+  .faq-trigger {
+    padding: 1.25rem 0.25rem;
+  }
+}
+
+.faq-icon-indicator {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item.open .faq-icon-indicator {
+  transform: rotate(45deg);
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.faq-answer-panel {
+  display: none;
+  padding: 0 0.5rem 1.75rem 2.85rem;
+}
+
+.faq-item.open .faq-answer-panel {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .faq-answer-panel {
+    padding: 0 0.25rem 1.35rem 1.75rem;
+  }
+}
+
+.faq-answer-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 /* --------------------------------------------------------------------------

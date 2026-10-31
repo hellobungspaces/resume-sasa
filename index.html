@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Saida Zakiyah · Portfolio & Professional Resume</title>
   <meta name="description" content="Portfolio & Professional Resume of Saida Zakiyah – Marketplace Operations, Public Administration & Customer Support Specialist. Graduate of UIN Syarif Hidayatullah Jakarta (GPA 3.64).">
+  <link rel="canonical" href="https://saidazkyh.my.id">
+
+  <!-- OpenGraph Metadata for WhatsApp, LinkedIn & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saidazkyh.my.id">
+  <meta property="og:title" content="Saida Zakiyah · Portfolio & Professional Resume">
+  <meta property="og:description" content="Spesialis Operasional Marketplace, Administrasi & Layanan Pelanggan. Lulusan UIN Jakarta (IPK 3.64 / Cum Laude). Siap segera untuk posisi WFO/Hybrid di Jakarta.">
+  <meta property="og:image" content="https://saidazkyh.my.id/assets/saida-profile.jpg?v=2">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Foto Resmi Saida Zakiyah #OPENTOWORK">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saida Zakiyah · Portfolio & Professional Resume">
+  <meta name="twitter:description" content="Spesialis Operasional Marketplace, Administrasi & Layanan Pelanggan. Lulusan UIN Jakarta (IPK 3.64 / Cum Laude).">
+  <meta name="twitter:image" content="https://saidazkyh.my.id/assets/saida-profile.jpg?v=2">
+
   <meta name="theme-color" content="#0D0D0D" id="theme-color-meta">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -31,6 +49,7 @@
         <a href="#experience" class="nav-link" data-i18n="navExperience">Pengalaman</a>
         <a href="#education" class="nav-link" data-i18n="navEducation">Pendidikan</a>
         <a href="#skills" class="nav-link" data-i18n="navSkills">Keahlian</a>
+        <a href="#faq" class="nav-link" data-i18n="navFaq">FAQ</a>
         <a href="#contact" class="nav-link" data-i18n="navContact">Kontak</a>
       </nav>
 
@@ -109,8 +128,13 @@
           <span class="nav-title" data-i18n="navSkills">Keahlian &amp; Domain</span>
           <span class="arrow-glyph">→</span>
         </a>
-        <a href="#contact" class="mobile-nav-link" data-drawer-link>
+        <a href="#faq" class="mobile-nav-link" data-drawer-link>
           <span class="nav-idx">05</span>
+          <span class="nav-title" data-i18n="navFaq">FAQ Rekruter</span>
+          <span class="arrow-glyph">→</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link" data-drawer-link>
+          <span class="nav-idx">06</span>
           <span class="nav-title" data-i18n="navContact">Kontak Langsung</span>
           <span class="arrow-glyph">→</span>
         </a>
@@ -249,6 +273,19 @@
       <div class="works-list" id="case-studies-container">
         <!-- Rendered dynamically from data.js -->
       </div>
+
+      <!-- Interactive SOP Pipeline (Daily Operations Architecture) -->
+      <div class="sop-pipeline-wrap">
+        <div class="sop-pipeline-header">
+          <div class="sop-pipeline-badge" data-i18n="sopBadge">STANDAR OPERASIONAL PROSEDUR (SOP) HARIAN</div>
+          <h3 class="sop-pipeline-title" data-i18n="sopTitle">Arsitektur Alur Kerja Operasional Marketplace</h3>
+          <p class="sop-pipeline-desc" data-i18n="sopDesc">Disiplin alur kerja 4 tahap dari verifikasi pesanan masuk hingga after-sales untuk menjaga SLA cepat dan rating toko bintang 5.</p>
+        </div>
+
+        <div class="sop-pipeline-grid" id="sop-pipeline-container">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
     </div>
   </section>
 
@@ -318,7 +355,26 @@
   </section>
 
   <!-- =========================================================================
-       Section 05: Giant Call To Action & Footer (Elizabeth Olsen ref)
+       Section 05: Recruiter FAQ & Screening Accordion
+       ========================================================================= -->
+  <section class="section-container" id="faq">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-number">05</span>
+        <div>
+          <h2 class="section-heading" data-i18n="faqHeading">FAQ REKRUTER (QUICK SCREENING)</h2>
+          <p class="section-subheading" data-i18n="faqSubheading">Jawaban langsung untuk ketersediaan kerja, mobilitas lokasi, dan kapabilitas teknis.</p>
+        </div>
+      </div>
+
+      <div class="faq-accordion-list" id="faq-container">
+        <!-- Rendered dynamically from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 06: Giant Call To Action & Footer (Elizabeth Olsen ref)
        ========================================================================= -->
   <section class="section-container footer-cta-section" id="contact">
     <div class="container">

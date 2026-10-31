@@ -357,5 +357,131 @@ export const portfolioData = {
         en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed audit inspections."
       }
     }
+  ],
+
+  sopPipeline: [
+    {
+      step: "01",
+      icon: "📥",
+      title: {
+        id: "Verifikasi & Alur Masuk Pesanan",
+        en: "Order Ingestion & Verification"
+      },
+      tag: {
+        id: "Shopee & TikTok Seller Center",
+        en: "Shopee & TikTok Seller Center"
+      },
+      metric: {
+        id: "0 Kesalahan Varian",
+        en: "Zero Variant Errors"
+      },
+      desc: {
+        id: "Memantau dashboard seller real-time, memvalidasi detail ukuran/warna, dan mencocokkan stok fisik sebelum resi dicetak.",
+        en: "Monitoring real-time seller dashboards, verifying sizing/color details, and confirming physical stock before printing waybills."
+      }
+    },
+    {
+      step: "02",
+      icon: "💬",
+      title: {
+        id: "SLA Chat & Panduan Ukuran",
+        en: "Chat SLA & Sizing Guidance"
+      },
+      tag: {
+        id: "WhatsApp Business CRM",
+        en: "WhatsApp Business CRM"
+      },
+      metric: {
+        id: "< 15 Menit Respon",
+        en: "< 15 Min SLA"
+      },
+      desc: {
+        id: "Merespon calon pembeli dengan template quick-reply informatif, konsultasi ukuran akurat, dan follow-up ramah transaksi tertunda.",
+        en: "Answering buyer inquiries with informative quick replies, accurate size consultation, and polite follow-ups for pending carts."
+      }
+    },
+    {
+      step: "03",
+      icon: "📦",
+      title: {
+        id: "QC Fisik & Serah Terima Kurir",
+        en: "Garment QC & Courier Dispatch"
+      },
+      tag: {
+        id: "Fulfillment & Packaging",
+        en: "Fulfillment & Packaging"
+      },
+      metric: {
+        id: "100% Lolos Inspeksi",
+        en: "100% Inspection Pass"
+      },
+      desc: {
+        id: "Pengecekan jahitan & kerapian seragam, packing aman berlapis, cetak resi thermal barcode, dan handover kurir tepat waktu.",
+        en: "Inspecting seams and fabric quality, secure polymailer packaging, thermal barcode printing, and punctual courier handovers."
+      }
+    },
+    {
+      step: "04",
+      icon: "⭐",
+      title: {
+        id: "After-Sales & Proteksi Rating",
+        en: "After-Sales & Rating Care"
+      },
+      tag: {
+        id: "Customer Satisfaction",
+        en: "Customer Satisfaction"
+      },
+      metric: {
+        id: "Rating 4.9★ Terjaga",
+        en: "4.9★ Rating Held"
+      },
+      desc: {
+        id: "Monitoring tracking kiriman ekspedisi, penanganan retur ramah tanpa debat, dan pencegahan ulasan negatif bintang 1-2.",
+        en: "Monitoring in-transit packages, managing exchange requests calmly without dispute, and safeguarding against 1-2 star reviews."
+      }
+    }
+  ],
+
+  recruiterFaq: [
+    {
+      q: {
+        id: "Kapan Saida siap mulai bekerja (Notice Period)?",
+        en: "When is Saida available to start (Notice Period)?"
+      },
+      a: {
+        id: "Siap bergabung segera (Immediate Availability / Zero Notice Period). Seluruh berkas administrasi seperti Ijazah S1 UIN Jakarta, Transkrip Nilai (IPK 3.64), KTP, dan portofolio kerja sudah lengkap dan siap untuk proses onboarding langsung.",
+        en: "Available to start immediately (Zero Notice Period). All onboarding documents including Bachelor's Degree certificate, academic transcript (GPA 3.64), ID card, and verified portfolio are ready for immediate employment."
+      }
+    },
+    {
+      q: {
+        id: "Bagaimana dengan sistem kerja dan fleksibilitas lokasi?",
+        en: "What is your work arrangement and location mobility?"
+      },
+      a: {
+        id: "Berdomisili di Jakarta Timur dan sangat terbuka untuk kerja WFO (Onsite) maupun Hybrid di seluruh area Jabodetabek (Jakarta Pusat, Selatan, Timur, Barat, Utara, serta Tangerang dan Bekasi) dengan akses transportasi yang lancar.",
+        en: "Based in East Jakarta and fully open to Onsite (WFO) or Hybrid roles across the Greater Jakarta area (Jabodetabek) with reliable commuting mobility."
+      }
+    },
+    {
+      q: {
+        id: "Apakah siap bekerja dalam sistem shift atau campaign lembur marketplace?",
+        en: "Are you comfortable with shift schedules and marketplace campaign surges?"
+      },
+      a: {
+        id: "Sangat siap. Memiliki pengalaman ritme kerja dinamis dan disiplin shift di Batavia Uniform maupun hospitality retail (Loopline Coffee), termasuk kesiapan menjaga SLA pesanan saat event promo tanggal kembar (Double-Date & Payday Sale).",
+        en: "Fully prepared. Experienced in high-volume, dynamic environments from e-commerce (Batavia Uniform) to retail hospitality (Loopline Coffee), including handling surges during monthly double-date and payday promotional campaigns."
+      }
+    },
+    {
+      q: {
+        id: "Platform dan software apa saja yang dikuasai secara aktif?",
+        en: "Which software platforms and operational tools do you master?"
+      },
+      a: {
+        id: "Shopee Seller Centre, TikTok Shop Seller Center, WhatsApp Business CRM, Microsoft Excel & Google Sheets (VLOOKUP, Pivot, formula logika, pencatatan rapi), Sistem Kasir POS, serta audit inventaris fisik dengan sistem FIFO.",
+        en: "Shopee Seller Centre, TikTok Shop Seller Center, WhatsApp Business CRM, Microsoft Excel & Google Sheets (VLOOKUP, Pivot tables, data entry), POS cashier systems, and physical stock inventory audits using FIFO."
+      }
+    }
   ]
 };

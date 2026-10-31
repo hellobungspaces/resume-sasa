@@ -10,6 +10,7 @@ const uiTranslations = {
   navExperience: { id: "Pengalaman", en: "Experience" },
   navEducation: { id: "Pendidikan", en: "Education" },
   navSkills: { id: "Keahlian", en: "Skills" },
+  navFaq: { id: "FAQ", en: "FAQ" },
   navContact: { id: "Kontak", en: "Contact" },
   btnBookCall: { id: "Hubungi", en: "Get In Touch" },
   statusText: { id: "TERSEDIA UNTUK KERJA", en: "AVAILABLE FOR HIRE" },
@@ -35,6 +36,18 @@ const uiTranslations = {
     id: "Penyelesaian kendala operasional toko, validasi data, dan audit stok.",
     en: "Practical solutions for storefront operations, data auditing, and inventory control."
   },
+  sopBadge: {
+    id: "STANDAR OPERASIONAL PROSEDUR (SOP) HARIAN",
+    en: "DAILY OPERATIONAL WORKFLOW (SOP)"
+  },
+  sopTitle: {
+    id: "Arsitektur Alur Kerja Operasional Marketplace",
+    en: "Marketplace Operations Workflow Architecture"
+  },
+  sopDesc: {
+    id: "Disiplin alur kerja 4 tahap dari verifikasi pesanan masuk hingga after-sales untuk menjaga SLA cepat dan rating toko bintang 5.",
+    en: "A 4-stage operational pipeline from incoming order verification to after-sales care, ensuring fast SLA and 5-star ratings."
+  },
   expHeading: {
     id: "PENGALAMAN KERJA",
     en: "WORK EXPERIENCE"
@@ -58,6 +71,14 @@ const uiTranslations = {
   skillsSubheading: {
     id: "Alat operasional marketplace, administrasi data, dan kompetensi kerja.",
     en: "Operational tooling, data administration, and core competencies."
+  },
+  faqHeading: {
+    id: "FAQ REKRUTER (QUICK SCREENING)",
+    en: "RECRUITER FAQ (QUICK SCREENING)"
+  },
+  faqSubheading: {
+    id: "Jawaban langsung untuk ketersediaan kerja, mobilitas lokasi, dan kapabilitas teknis.",
+    en: "Immediate answers to hiring availability, location mobility, and operational capabilities."
   },
   footerHugeCta: {
     id: "MARI BEKERJA SAMA.",
@@ -132,9 +153,11 @@ function setLanguage(lang) {
   renderHero(lang);
   renderStats(lang);
   renderCaseStudies(lang);
+  renderPipeline(lang);
   renderExperience(lang);
   renderEducation(lang);
   renderSkills(lang);
+  renderFaq(lang);
 }
 
 /* --------------------------------------------------------------------------
@@ -228,6 +251,45 @@ function renderCaseStudies(lang) {
     .join("");
 
   container.innerHTML = html;
+}
+
+function renderPipeline(lang) {
+  const container = document.getElementById("sop-pipeline-container");
+  if (!container || !portfolioData.sopPipeline) return;
+
+  const html = portfolioData.sopPipeline
+    .map((item, idx) => {
+      const isActive = idx === 0 ? "active" : "";
+      return `
+      <div class="sop-card ${isActive}" data-sop-card tabindex="0" role="button" aria-expanded="${idx === 0}">
+        <div class="sop-card-top">
+          <div class="sop-step-number">${item.step}</div>
+          <div class="sop-icon">${item.icon}</div>
+        </div>
+        <div class="sop-tag">${item.tag[lang]}</div>
+        <h4 class="sop-title">${item.title[lang]}</h4>
+        <p class="sop-desc">${item.desc[lang]}</p>
+        <div class="sop-metric-pill">
+          <span class="sop-metric-dot"></span>
+          <span>${item.metric[lang]}</span>
+        </div>
+      </div>
+    `;
+    })
+    .join("");
+
+  container.innerHTML = html;
+
+  container.querySelectorAll("[data-sop-card]").forEach((card) => {
+    card.addEventListener("click", () => {
+      container.querySelectorAll("[data-sop-card]").forEach((c) => {
+        c.classList.remove("active");
+        c.setAttribute("aria-expanded", "false");
+      });
+      card.classList.add("active");
+      card.setAttribute("aria-expanded", "true");
+    });
+  });
 }
 
 function renderExperience(lang) {
@@ -412,6 +474,51 @@ function setupSkillsFilter() {
           card.style.display = "none";
         }
       });
+    });
+  });
+}
+
+function renderFaq(lang) {
+  const container = document.getElementById("faq-container");
+  if (!container || !portfolioData.recruiterFaq) return;
+
+  const html = portfolioData.recruiterFaq
+    .map((faq, idx) => {
+      const isOpen = idx === 0 ? "open" : "";
+      const num = String(idx + 1).padStart(2, "0");
+      return `
+      <div class="faq-item ${isOpen}" data-faq-item>
+        <button type="button" class="faq-trigger" data-faq-trigger aria-expanded="${idx === 0}">
+          <div class="faq-q-wrap">
+            <span class="faq-q-num">[ ${num} ]</span>
+            <span class="faq-q-text">${faq.q[lang]}</span>
+          </div>
+          <span class="faq-icon-indicator" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-answer-panel">
+          <div class="faq-answer-content">
+            <p>${faq.a[lang]}</p>
+          </div>
+        </div>
+      </div>
+    `;
+    })
+    .join("");
+
+  container.innerHTML = html;
+
+  container.querySelectorAll("[data-faq-trigger]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const parent = btn.closest("[data-faq-item]");
+      if (!parent) return;
+      const isOpen = parent.classList.contains("open");
+      parent.classList.toggle("open", !isOpen);
+      btn.setAttribute("aria-expanded", !isOpen);
     });
   });
 }
