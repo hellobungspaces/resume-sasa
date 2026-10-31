@@ -45,13 +45,13 @@ export const portfolioData = {
       },
       {
         value: "< 15 Mnt",
-        label: { id: "Kecepatan Respon Chat", en: "Chat Response SLA" },
+        label: { id: "Kecepatan Respon Chat", en: "Fast Chat Response" },
         sub: { id: "Konsultasi Ukuran & Retur Cepat", en: "Fast Sizing & Return Support" }
       },
       {
         value: "0%",
-        label: { id: "Selisih Stock Opname", en: "Zero Stock Shrinkage" },
-        sub: { id: "Kepatuhan Audit Fisik & FIFO", en: "Strict Physical Audit & FIFO" }
+        label: { id: "Selisih Stok Toko", en: "Stock Discrepancy" },
+        sub: { id: "Audit Fisik & Pencatatan Akurat", en: "Accurate Physical Audit & FIFO" }
       },
       {
         value: "3.64",
@@ -299,8 +299,8 @@ export const portfolioData = {
         ]
       },
       outcome: {
-        id: "SLA respon chat terjaga cepat, komplain retur teratasi dengan baik, dan rating toko stabil bintang 5.",
-        en: "Chat response SLA remained swift, return complaints were resolved smoothly, and store rating held at 5 stars."
+        id: "Respon chat terjaga cepat, komplain retur teratasi dengan ramah, dan rating toko stabil bintang 5.",
+        en: "Chat response remained swift, return complaints were resolved smoothly, and store rating held at 5 stars."
       }
     },
     {
@@ -353,8 +353,8 @@ export const portfolioData = {
         ]
       },
       outcome: {
-        id: "Tingkat selisih inventaris berhasil ditekan mendekati nol dan standar sanitasi bar selalu lolos audit kebersihan.",
-        en: "Inventory shrinkage was reduced to near-zero and bar sanitation reliably passed audit inspections."
+        id: "Tingkat selisih inventaris berhasil ditekan mendekati nol dan standar kebersihan bar selalu lolos audit.",
+        en: "Stock discrepancies were kept at zero and bar hygiene reliably passed audit inspections."
       }
     }
   ],
@@ -384,8 +384,8 @@ export const portfolioData = {
       step: "02",
       icon: "💬",
       title: {
-        id: "SLA Chat & Panduan Ukuran",
-        en: "Chat SLA & Sizing Guidance"
+        id: "Respon Chat & Panduan Ukuran",
+        en: "Fast Chat Response & Sizing"
       },
       tag: {
         id: "WhatsApp Business CRM",
@@ -393,7 +393,7 @@ export const portfolioData = {
       },
       metric: {
         id: "< 15 Menit Respon",
-        en: "< 15 Min SLA"
+        en: "< 15 Min Response"
       },
       desc: {
         id: "Merespon calon pembeli dengan template quick-reply informatif, konsultasi ukuran akurat, dan follow-up ramah transaksi tertunda.",
@@ -449,8 +449,8 @@ export const portfolioData = {
         en: "When is Saida available to start (Notice Period)?"
       },
       a: {
-        id: "Siap bergabung segera (Immediate Availability / Zero Notice Period). Seluruh berkas administrasi seperti Ijazah S1 UIN Jakarta, Transkrip Nilai (IPK 3.64), KTP, dan portofolio kerja sudah lengkap dan siap untuk proses onboarding langsung.",
-        en: "Available to start immediately (Zero Notice Period). All onboarding documents including Bachelor's Degree certificate, academic transcript (GPA 3.64), ID card, and verified portfolio are ready for immediate employment."
+        id: "Memiliki notice period 1 bulan (One Month Notice) dari pekerjaan saat ini di Batavia Uniform. Seluruh berkas administrasi seperti Ijazah S1 UIN Jakarta, Transkrip Nilai (IPK 3.64), KTP, dan portofolio kerja sudah lengkap sehingga proses administrasi kontrak dan onboarding bisa dipersiapkan dengan lancar.",
+        en: "Currently on a 1-month notice period (One Month Notice) at Batavia Uniform. All onboarding documents including Bachelor's Degree certificate from UIN Jakarta, academic transcript (GPA 3.64), ID card, and verified portfolio are ready so contract preparation and transition planning can proceed smoothly."
       }
     },
     {
@@ -469,7 +469,7 @@ export const portfolioData = {
         en: "Are you comfortable with shift schedules and marketplace campaign surges?"
       },
       a: {
-        id: "Sangat siap. Memiliki pengalaman ritme kerja dinamis dan disiplin shift di Batavia Uniform maupun hospitality retail (Loopline Coffee), termasuk kesiapan menjaga SLA pesanan saat event promo tanggal kembar (Double-Date & Payday Sale).",
+        id: "Sangat siap. Memiliki pengalaman ritme kerja dinamis dan disiplin shift di Batavia Uniform maupun hospitality retail (Loopline Coffee), termasuk kesiapan menjaga kecepatan proses pesanan saat event promo tanggal kembar (Double-Date & Payday Sale).",
         en: "Fully prepared. Experienced in high-volume, dynamic environments from e-commerce (Batavia Uniform) to retail hospitality (Loopline Coffee), including handling surges during monthly double-date and payday promotional campaigns."
       }
     },

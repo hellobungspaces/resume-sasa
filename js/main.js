@@ -17,12 +17,12 @@ const uiTranslations = {
   btnBookCall: { id: "Hubungi", en: "Get In Touch" },
   statusText: { id: "TERSEDIA UNTUK KERJA", en: "AVAILABLE FOR HIRE" },
   workPref: {
-    id: "JAKARTA (WFO / HYBRID) · SIAP SEGERA",
-    en: "JAKARTA (WFO / HYBRID) · AVAILABLE IMMEDIATELY"
+    id: "JAKARTA (WFO / HYBRID) · NOTICE 1 BULAN",
+    en: "JAKARTA (WFO / HYBRID) · 1 MONTH NOTICE"
   },
   heroHook: {
-    id: "Operasional toko online yang rapi, SLA respon cepat, dan kontrol stok zero-shrinkage.",
-    en: "Clean storefront operations, fast chat SLA, and zero-shrinkage inventory control."
+    id: "Operasional toko online yang rapi, respon chat cepat, dan kontrol stok tanpa selisih.",
+    en: "Clean storefront operations, fast chat response, and zero stock discrepancy."
   },
   btnChatWa: { id: "Hubungi via WhatsApp", en: "Contact via WhatsApp" },
   btnAllChannels: { id: "Semua Jalur Kontak", en: "All Contact Channels" },
@@ -47,8 +47,8 @@ const uiTranslations = {
     en: "Marketplace Operations Workflow Architecture"
   },
   sopDesc: {
-    id: "Disiplin alur kerja 4 tahap dari verifikasi pesanan masuk hingga after-sales untuk menjaga SLA cepat dan rating toko bintang 5.",
-    en: "A 4-stage operational pipeline from incoming order verification to after-sales care, ensuring fast SLA and 5-star ratings."
+    id: "Disiplin alur kerja 4 tahap dari verifikasi pesanan masuk hingga after-sales untuk menjaga respon cepat dan rating toko bintang 5.",
+    en: "A 4-stage operational pipeline from incoming order verification to after-sales care, ensuring fast response times and 5-star ratings."
   },
   expHeading: {
     id: "PENGALAMAN KERJA",
@@ -211,7 +211,7 @@ function renderCaseStudies(lang) {
   const highlights = [
     { id: "4.9★ Toko Terjaga", en: "4.9★ Store Rating" },
     { id: "Data Tanggap Bencana", en: "Crisis Data Audit" },
-    { id: "0% Selisih Stok FIFO", en: "Zero Shrinkage FIFO" }
+    { id: "0% Selisih Stok", en: "0% Stock Discrepancy" }
   ];
 
   const html = portfolioData.caseStudies
